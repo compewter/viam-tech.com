@@ -1,0 +1,11 @@
+.header-logo-desktop {
+  height: 120px;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+.header-logo-mobile {
+  height: 80px;
+  padding: 10px;
+  margin: 20px auto;
+}
