@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /images
+Disallow: /static
+
+Sitemap: https://www.viam-tech.com/sitemap.xml

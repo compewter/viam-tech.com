@@ -1,11 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { 
-  Button,
-  Container,
-  Icon,
+import {
   Image,
-  Menu,
   Responsive,
   Segment,
   Sidebar,
@@ -54,7 +50,7 @@ export default class MobileContainer extends Component {
                   </Menu.Item>
                 </Menu>
               </Container>*/}
-              <Image src="/images/logo-side-text.png" className="header-logo-mobile" />
+              <Image src="/images/logo-side-text.png" className="header-logo-mobile" alt='abstract architecture' />
               <Heading mobile />
             </Segment>
 

@@ -86,12 +86,12 @@ class ContactForm extends Component {
           <Header as='h3' style={{fontSize:'3em'}}>Contact Us</Header>
           {!success &&
             <div>
-              <Form.Input label='Name' name='name' value={name} onChange={this.handleChange} type='text' error={error.field == 'name'} required/>
-              <Form.Input label='Email' name='email' value={email} onChange={this.handleChange} type='email' error={error.field == 'email'} required/>
-              <Form.Input label='Company' name='company' value={company} onChange={this.handleChange} type='text' error={error.field == 'company'} />
-              <Form.Input label='Phone Number' name='phone' value={phone} onChange={this.handleChange} type='tel' error={error.field == 'phone'} />
+              <Form.Input label='Name' name='name' value={name} onChange={this.handleChange} type='text' error={error.field === 'name'} required/>
+              <Form.Input label='Email' name='email' value={email} onChange={this.handleChange} type='email' error={error.field === 'email'} required/>
+              <Form.Input label='Company' name='company' value={company} onChange={this.handleChange} type='text' error={error.field === 'company'} />
+              <Form.Input label='Phone Number' name='phone' value={phone} onChange={this.handleChange} type='tel' error={error.field === 'phone'} />
               <Form.Input type='hidden' name='antispam' onChange={this.handleChange} />
-              <Form.TextArea label='Message' name='message' value={message} onChange={this.handleChange} error={error.field == 'message'} required/>
+              <Form.TextArea label='Message' name='message' value={message} onChange={this.handleChange} error={error.field === 'message'} required/>
               <Button>Submit</Button>
             </div>
           }

@@ -28,8 +28,6 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const ServiceCards = services.map((service, ind) => <ServiceCard service={service} key={`service_${ind}`} />)
-
 const HomepageLayout = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: '8em 0em', backgroundColor:'#f9f9f9' }} vertical>
@@ -55,13 +53,13 @@ const HomepageLayout = () => (
       <Responsive minWidth={Responsive.onlyMobile.maxWidth}>
         <Header as='h2' className='section-header' style={{fontSize: '4em', marginBottom: 30}}>Services</Header>
         <Card.Group itemsPerRow={3} centered style={{margin: '25px auto', maxWidth: 1200}}>
-          {ServiceCards}
+          {services.map((service, ind) => <ServiceCard service={service} key={`service_${ind}`} mobile={false} /> )}
         </Card.Group>
       </Responsive>
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
         <Header as='h2' className='section-header' style={{fontSize: '3em', marginBottom: 30}}>Services</Header>
         <Card.Group itemsPerRow={1} centered style={{margin: '25px auto'}}>
-          {ServiceCards}
+          {services.map((service, ind) => <ServiceCard service={service} key={`service_${ind}`} mobile={true} /> )}
         </Card.Group>
       </Responsive>
     </Segment>

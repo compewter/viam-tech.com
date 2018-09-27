@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import {
-  Container,
   Image,
-  Menu,
   Responsive,
   Segment,
   Visibility
@@ -19,7 +17,7 @@ export default class DesktopContainer extends Component {
 
   render() {
     const { children } = this.props
-    const { fixed } = this.state
+    // const { fixed } = this.state
 
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -41,7 +39,7 @@ export default class DesktopContainer extends Component {
               <Menu.Item as='a'>Contact</Menu.Item>
             </Container>
           </Menu>*/}
-          <Image src="/images/logo-side-text.png" className="header-logo-desktop" />
+          <Image src="/images/logo-side-text.png" className="header-logo-desktop" alt='abstract architecture'/>
           <Segment
             textAlign='center'
             style={{ minHeight: 700, padding: '1em 0em', 'backgroundColor': '#666', 'backgroundImage': 'url(/images/hero-img.jpg)', 'backgroundRepeat': 'no-repeat', backgroundSize: 'cover' }}
