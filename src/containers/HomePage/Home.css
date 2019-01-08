@@ -1,11 +1,15 @@
-.header-logo-desktop {
-  height: 120px;
+.header-menu-logo-desktop {
+  height: 60px;
+  margin: 10px auto;
+}
+.heading-logo-desktop {
+  height: 220px;
   padding: 10px;
-  margin: 20px auto;
+  margin: -150px auto 40px auto;
 }
 
-.header-logo-mobile {
-  height: 80px;
+.heading-logo-mobile {
+  height: 110px;
   padding: 10px;
-  margin: 20px auto;
+  margin: -110px auto 30px auto;
 }

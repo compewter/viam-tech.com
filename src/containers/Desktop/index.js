@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import {
+  Container,
   Image,
+  Menu,
   Responsive,
-  Segment,
   Visibility
 } from 'semantic-ui-react'
 import Footer from '../../components/Footer'
-import Heading from './Heading'
 
 export default class DesktopContainer extends Component {
   state = {}
@@ -16,8 +17,8 @@ export default class DesktopContainer extends Component {
   showFixedMenu = () => this.setState({ fixed: true })
 
   render() {
-    const { children } = this.props
-    // const { fixed } = this.state
+    const { children, activePage } = this.props
+    const { fixed } = this.state
 
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -26,31 +27,24 @@ export default class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         > 
-          {/*<Menu
+          <Menu
             fixed={fixed ? 'top' : null}
             pointing={!fixed}
             secondary={!fixed}
             size='large'
-            style={{"marginBottom": 0}}
           > 
+            <Image src="/images/logo/logo-side-text.png" className='header-menu-logo-desktop' alt='abstract architecture'/>
             <Container>
-              <Menu.Item as='a' active>Home</Menu.Item>
-              <Menu.Item as='a'>Services</Menu.Item>
-              <Menu.Item as='a'>Contact</Menu.Item>
+              <Menu.Item active={activePage==='home'}>
+                <Link style={{color: 'black'}} to='/'>Home</Link>
+              </Menu.Item>
+              <Menu.Item active={activePage==='contact'}>
+                <Link style={{color: 'black'}} to='/contact'>Contact</Link>
+              </Menu.Item>
             </Container>
-          </Menu>*/}
-          <Image src="/images/logo-side-text.png" className="header-logo-desktop" alt='abstract architecture'/>
-          <Segment
-            textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em', 'backgroundColor': '#666', 'backgroundImage': 'url(/images/hero-img.jpg)', 'backgroundRepeat': 'no-repeat', backgroundSize: 'cover' }}
-            vertical
-          >
-            <Heading />
-          </Segment>
+          </Menu>
         </Visibility>
-
         {children}
-
         <Footer />
       </Responsive>
     )

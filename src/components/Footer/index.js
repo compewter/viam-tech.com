@@ -14,8 +14,8 @@ const Footer = (props) => (
       <Grid divided inverted stackable>
         <Grid.Row>
           <Grid.Column width={6}>
-            <Image height='50' src='/images/logo-side-text.png' style={{margin: '0 auto'}}/>
-            <p style={{textAlign: 'center', marginTop: 20}}>© 2018 Viam Technologies</p>
+            <Image height='50' src='/images/logo/logo-side-text.png' style={{margin: '0 auto'}}/>
+            <p style={{textAlign: 'center', marginTop: 20}}>© 2019 Viam Technologies</p>
           </Grid.Column>
           <Grid.Column width={7}>
             <Header inverted as='h4' content='Viam Technologies' />
