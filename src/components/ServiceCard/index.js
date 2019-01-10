@@ -20,6 +20,31 @@ class ServiceCard extends Component {
     })
   }
 
+  serviceClicked = (service) => {
+    if(document.querySelector('#contact')){
+      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
+      // if(!document.getElementById('contact-message').value){
+        setTimeout(()=>{
+          this.slowType(`Hi! I'm interested in discussing ${service.name} for my organization.`)
+        },500)
+      // }
+    }
+  }
+
+  slowType = (message)=>{
+    const messageQueue = message.split('');
+    let index = -1;
+    let speed = 45;
+    (function recursiveSet(){
+      index++
+      if(index <= messageQueue.length){
+        window.setMessage(messageQueue.slice(0,index).join(''))
+        setTimeout(recursiveSet,speed)
+      }
+    })()
+    
+  }
+
   render() {
     const { service, mobile } = this.props
     const { hovering } = this.state
@@ -32,7 +57,7 @@ class ServiceCard extends Component {
           minHeight: 260,
           backgroundSize: 'cover'
         }}
-        onClick={()=>{document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })}}
+        onClick={()=>{this.serviceClicked(service)}}
         alt={service.imgAltText}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}

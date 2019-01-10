@@ -9,6 +9,7 @@ import {
   Visibility
 } from 'semantic-ui-react'
 import Footer from '../../components/Footer'
+import './Desktop.css'
 
 export default class DesktopContainer extends Component {
   state = {}
@@ -33,18 +34,18 @@ export default class DesktopContainer extends Component {
             secondary={!fixed}
             size='large'
           > 
-            <Image src="/images/logo/logo-side-text.png" className='header-menu-logo-desktop' alt='abstract architecture'/>
+            <Image src="/images/logo/logo-side-text.png" className='header-menu-logo-desktop' alt='logo'/>
             <Container>
-              <Menu.Item active={activePage==='home'}>
-                <Link style={{color: 'black'}} to='/'>Home</Link>
-              </Menu.Item>
-              <Menu.Item active={activePage==='contact'}>
-                <Link style={{color: 'black'}} to='/contact'>Contact</Link>
-              </Menu.Item>
+              <Menu.Item as={Link} active={activePage==='home'} to='/' onClick={()=>window.scrollTo(0, 0)} >Home</Menu.Item>
+              <Menu.Item as={Link} active={activePage==='services'} to='/services' onClick={()=>window.scrollTo(0, 0)} >Services</Menu.Item>
+              <Menu.Item as={Link} active={activePage==='blog'} to='/blog' onClick={()=>window.scrollTo(0, 0)} >Blog</Menu.Item>
+              <Menu.Item as={Link} active={activePage==='contact'} to='/contact' onClick={()=>window.scrollTo(0, 0)} >Contact</Menu.Item>
             </Container>
           </Menu>
         </Visibility>
-        {children}
+        <div style={{minHeight: window.innerHeight-250}}>
+          {children}
+        </div>
         <Footer />
       </Responsive>
     )

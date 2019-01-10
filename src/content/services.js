@@ -1,4 +1,4 @@
-const services = [{
+export default [{
   name: 'Security Risk Assessments',
   description: 'Gain a clear understanding of the risks facing your organization and how to address them.',
   img: '/images/services/risk-lurking.jpeg',
@@ -44,5 +44,3 @@ const services = [{
   img: '/images/services/r&d.jpeg',
   imgAltText: 'lightbulb'
 },*/]
-
-export default services

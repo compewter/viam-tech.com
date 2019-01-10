@@ -12,6 +12,7 @@ import {
   Responsive,
   Segment,
 } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import DesktopContainer from '../Desktop'
 import MobileContainer from '../Mobile'
 import services from '../../content/services'
@@ -98,7 +99,7 @@ const HomepageLayout = ({ activePage }) => (
         <p style={{ fontSize: '1.33em' }}>
           A security risk assessment is a crucial step for mitigating the cyber security risks in your organization. Without identifying and addressing the risks in your environment, you have no chance to prevent a catastrophic...
         </p>
-        <Button as='a' size='large' style={{backgroundColor: '#008066', color: 'white'}}>
+        <Button as={Link} to='/blog/protect-your-org-risk-assessment' size='large' style={{backgroundColor: '#008066', color: 'white'}}>
           Read More
         </Button>
         <Divider
@@ -115,7 +116,7 @@ const HomepageLayout = ({ activePage }) => (
         <p style={{ fontSize: '1.33em' }}>
           You may have heard that using public WiFi is dangerous. Security Engineer and Co-Founder Jose Barrientos explains how criminals exploit victims...
         </p>
-        <Button as='a' size='large' style={{backgroundColor: '#008066', color: 'white'}}>
+        <Button as={Link} to='/blog/hacking-explained-man-in-the-middle' size='large' style={{backgroundColor: '#008066', color: 'white'}}>
           Read More
         </Button>
       </Container>

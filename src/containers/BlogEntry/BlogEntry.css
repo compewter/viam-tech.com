@@ -1,0 +1,10 @@
+#blog-entry {
+  padding: 4em 0em;
+  background-color: #f9f9f9;
+}
+
+.article-img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}

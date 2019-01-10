@@ -11,7 +11,7 @@ import {
 const Heading = ({ mobile }) => (
     <Segment
       textAlign='center'
-      style={{ height: mobile ? 400 : 750, backgroundImage: 'url(/images/home/hero-img.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPositionY: mobile ? 100: 150 }}
+      style={{ height: mobile ? 400 : 750, backgroundImage: 'url(/images/home/hero-img.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPositionY: mobile ? 100: 195 }}
       vertical
     >
       <Image src="/images/logo/logo-bottom-text.png" style={{marginTop: mobile ? 0 : 25}} className={mobile ? 'heading-logo-mobile' : 'heading-logo-desktop'} alt='abstract architecture'/>

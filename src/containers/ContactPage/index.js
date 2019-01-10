@@ -22,12 +22,12 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const HomepageLayout = ({activePage}) => (
+const ContactPage = ({activePage}) => (
   <ResponsiveContainer activePage={activePage}>
-    <Segment id='contact' style={{ padding: '4em 0em', backgroundColor: '#f9f9f9' }} vertical>
+    <Segment id='contact' style={{ padding: '4em 0em'}} vertical>
       <ContactForm />
     </Segment>
   </ResponsiveContainer>
 )
 
-export default HomepageLayout
+export default ContactPage
