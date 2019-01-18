@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import BlogFeed from './containers/BlogFeed'
 import BlogEntry from './containers/BlogEntry'
 import Contact from './containers/ContactPage'
@@ -16,7 +16,7 @@ const blogContentByPath = blogs.reduce((blogsByPath, blog)=>{
 class App extends Component {
   render() {
     return (
-     <BrowserRouter>
+     <HashRouter>
         <div className="App">
           <Switch>
             <Route exact path="/" render={props => <Home activePage='home' />} />
@@ -34,7 +34,7 @@ class App extends Component {
             <Route render={props => <Home />} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
