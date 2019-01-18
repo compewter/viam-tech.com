@@ -36,6 +36,10 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = ({ activePage }) => (
   <ResponsiveContainer activePage={activePage}>
+    <Helmet>
+      <title>Viam Technologies | Cyber Security Consulting</title>
+      <meta name="description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
+    </Helmet>
     <Segment style={{ padding: '8em 0em', backgroundColor:'#f9f9f9' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -54,23 +58,32 @@ const HomepageLayout = ({ activePage }) => (
       </Grid>
     </Segment>
 
-    <Segment style={{ padding: '0em' }} vertical>
+    <Segment style={{ padding: '0em', backgroundColor: 'white' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              ""
-            </Header>
-            <p style={{ fontSize: '1.33em' }}></p>
-          </Grid.Column>
-          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              ""
+            <Header as='h3' style={{ fontSize: '2.5em' }}>
+              60%
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              
+              Of Small to Medium Size Businesses Fold After A Serious Security Incident
             </p>
           </Grid.Column>
+          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+            <Header as='h3' style={{ fontSize: '2.5em' }}>
+              1/5
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+              Of Small to Medium Size Businesses Annually Becomes A Victim Of A Security Incident
+            </p>
+          </Grid.Column>
+          <p style={{position: 'absolute', bottom: 10, right: 10, fontSize: '.8em'}}>Source: 
+            <a
+              href='https://www.bizjournals.com/bizjournals/how-to/growth-strategies/2017/05/does-your-business-need-cyber-liability-insurance.html'
+              rel="noopener noreferrer"
+              target='_blank'
+            > BizJournals.com</a>
+          </p>
         </Grid.Row>
       </Grid>
     </Segment>
@@ -91,7 +104,7 @@ const HomepageLayout = ({ activePage }) => (
       </Responsive>
     </Segment>
 
-    <Segment style={{ padding: '6em 0em' }} vertical>
+    <Segment style={{ padding: '6em 0em', backgroundColor: 'white' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
           Protect Your Organization with a Security Risk Assessment
@@ -99,7 +112,7 @@ const HomepageLayout = ({ activePage }) => (
         <p style={{ fontSize: '1.33em' }}>
           A security risk assessment is a crucial step for mitigating the cyber security risks in your organization. Without identifying and addressing the risks in your environment, you have no chance to prevent a catastrophic...
         </p>
-        <Button as={Link} to='/blog/protect-your-org-risk-assessment' size='large' style={{backgroundColor: '#008066', color: 'white'}}>
+        <Button as={Link} to='/blog/protect-your-org-risk-assessment' size='large' style={{backgroundColor: '#008066', color: 'white'}} onClick={()=>window.scrollTo(0, 0)}>
           Read More
         </Button>
         <Divider
@@ -111,12 +124,12 @@ const HomepageLayout = ({ activePage }) => (
           Hacking Attacks Explained
         </Divider>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Man In The Middle
+          URL Spoofing Trick
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          You may have heard that using public WiFi is dangerous. Security Engineer and Co-Founder Jose Barrientos explains how criminals exploit victims...
+          This simple but effective URL spoofing trick can fool even the most security conscious users into believing they are on a legitimate webiste...
         </p>
-        <Button as={Link} to='/blog/hacking-explained-man-in-the-middle' size='large' style={{backgroundColor: '#008066', color: 'white'}}>
+        <Button as={Link} to='/blog/hacking-explained-url-spoofing-trick' size='large' style={{backgroundColor: '#008066', color: 'white'}} onClick={()=>window.scrollTo(0, 0)}>
           Read More
         </Button>
       </Container>

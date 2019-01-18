@@ -25,13 +25,19 @@ ResponsiveContainer.propTypes = {
 
 const BlogEntry = ({activePage, blog}) => (
   <ResponsiveContainer activePage={activePage}>
+    <Helmet>
+      <title>Viam Technologies | {blog.title}</title>
+      <meta name="description" content={blog.snippet} />
+    </Helmet>
     <Segment id='blog-entry' vertical>
       <Container>
-        <Header as='h1'>
+        <Header as='h1' style={{marginBottom: 40}}>
           {blog.title}
           <Header.Subheader><Icon name='calendar alternate outline' />{blog.date} | <Icon name='user outline' />{blog.author}</Header.Subheader>
         </Header>
-        {blog.content}
+        <div style={{fontSize: '1.2rem'}}>
+          {blog.content}
+        </div>
         <Signature author={blog.author} />
       </Container>
     </Segment>

@@ -13,7 +13,7 @@ const signatureContent = {
   'Michael Wetherald': {
     image: '/images/blog/michael.png',
     title: 'Security Engineer and Co-Founder',
-    signatureText: '400 lbs and living in his mother\'s basement, you know he\'s the real deal.'
+    signatureText: 'Michael is the inventor of a patent pending next generation web proxy technology and brings to Viam his expertise in web and Linux security. Outside of work he enjoys carpentry, having built a dog mansion for his spoiled boy.'
   },
   'Jose Barrientos': {
     image: '/images/blog/jose.png',
@@ -36,7 +36,7 @@ const BlogSignature = ({author}) => (
             <Header.Subheader>{signatureContent[author].title}</Header.Subheader>
           </Header>
           <p>{signatureContent[author].signatureText}</p>
-          <p>When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services.<br/><Link to='/contact'>Contact us</Link> today to be prepared.</p>
+          <p>When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services.<br/><Link to='/contact' onClick={()=>window.scrollTo(0, 0)}>Contact us</Link> today to be prepared.</p>
         </Grid.Column>
       </Grid>
     </Container>

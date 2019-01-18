@@ -34,7 +34,7 @@ export default class DesktopContainer extends Component {
             secondary={!fixed}
             size='large'
           > 
-            <Image src="/images/logo/logo-side-text.png" className='header-menu-logo-desktop' alt='logo'/>
+            <Image src="/images/logo/logo-header-desktop.png" className='header-menu-logo-desktop' alt='logo'/>
             <Container>
               <Menu.Item as={Link} active={activePage==='home'} to='/' onClick={()=>window.scrollTo(0, 0)} >Home</Menu.Item>
               <Menu.Item as={Link} active={activePage==='services'} to='/services' onClick={()=>window.scrollTo(0, 0)} >Services</Menu.Item>

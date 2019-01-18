@@ -16,6 +16,19 @@ class ContactForm extends Component {
     window.setMessage = (message)=>{
       this.setState({message})
     }
+    
+    if(window.location.pathname === '/contact'){
+      const messageQueue = 'Hi! I\'m interested in discussing cyber security services for my organization.'.split('');
+      let index = -1;
+      let speed = 45;
+      (function recursiveSet(){
+        index++
+        if(index <= messageQueue.length){
+          window.setMessage(messageQueue.slice(0,index).join(''))
+          setTimeout(recursiveSet,speed)
+        }
+      })()
+    }
   }
 
   handleChange = (e, {name, value}) => {

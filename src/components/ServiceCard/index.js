@@ -42,7 +42,6 @@ class ServiceCard extends Component {
         setTimeout(recursiveSet,speed)
       }
     })()
-    
   }
 
   render() {

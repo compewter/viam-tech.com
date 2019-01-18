@@ -27,7 +27,11 @@ ResponsiveContainer.propTypes = {
 
 const ServicesPage = ({activePage}) => (
   <ResponsiveContainer activePage={activePage}>
-    <Segment style={{ padding: '6em 2em'}} vertical textAlign='center'>
+    <Helmet>
+      <title>Viam Technologies | Services</title>
+      <meta name="description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
+    </Helmet>
+    <Segment style={{ padding: '6em 2em', backgroundColor: 'white'}} vertical textAlign='center'>
       <Responsive minWidth={Responsive.onlyMobile.maxWidth}>
         <Header as='h2' className='section-header' style={{fontSize: '4em', marginBottom: 30}}>Services</Header>
         <Card.Group itemsPerRow={3} centered style={{margin: '25px auto', maxWidth: 1200}}>
