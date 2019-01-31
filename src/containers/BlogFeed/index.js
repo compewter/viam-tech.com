@@ -39,7 +39,7 @@ ResponsiveContainer.propTypes = {
 const BlogFeed = ({activePage}) => (
   <ResponsiveContainer activePage={activePage}>
     <Helmet>
-      <title>Viam Technologies | Cyber Security Blog</title>
+      <title>Cyber Security Blog | Viam Technologies</title>
       <meta name="description" content="Read about why preparing for cyber security incidents is critical for your organization. Our hacking explained articles walk you through how common attacks work." />
     </Helmet>
     <Segment id='blog-feed' vertical>

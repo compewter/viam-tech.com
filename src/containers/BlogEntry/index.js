@@ -26,7 +26,7 @@ ResponsiveContainer.propTypes = {
 const BlogEntry = ({activePage, blog}) => (
   <ResponsiveContainer activePage={activePage}>
     <Helmet>
-      <title>Viam Technologies | {blog.title}</title>
+      <title>{blog.title} | Viam Technologies</title>
       <meta name="description" content={blog.snippet} />
     </Helmet>
     <Segment id='blog-entry' vertical>

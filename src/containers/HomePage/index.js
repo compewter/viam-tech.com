@@ -37,7 +37,7 @@ ResponsiveContainer.propTypes = {
 const HomepageLayout = ({ activePage }) => (
   <ResponsiveContainer activePage={activePage}>
     <Helmet>
-      <title>Viam Technologies | Cyber Security Consulting</title>
+      <title>Cyber Security Consulting | Viam Technologies</title>
       <meta name="description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
     </Helmet>
     <Segment style={{ padding: '8em 0em', backgroundColor:'#f9f9f9' }} vertical>
