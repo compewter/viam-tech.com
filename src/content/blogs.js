@@ -8,7 +8,77 @@ function jumpToTop(){
   window.scrollTo(0, 0)
 }
 
-export default [{
+export default [
+{
+  title: 'Hacking Explained: Advanced Phishing Attacks and Defense',
+  date: 'January 2019',
+  author: 'Michael Wetherald',
+  snippet: 'A new phishing tool was released which allows hackers to monitor victims as they shop or send emails. Here\'s how it works, and how you can protect users who visit your...',
+  path: '/blog/hacking-explained-advanced-phishing-attacks-defense',
+  content: (<div>
+    <h2>There's A New Threat In Town</h2>
+    <p>Security engineer Piotr Duszyński (<a href='https://www.twitter.com/drk1wi' target='_blank' rel='noopener noreferrer'>@drk1wi</a>) has developed and released a new phishing tool called <a href="https://github.com/drk1wi/Modlishka" target='_blank'>Modlishka</a> which is being positively received by the information security community. It boasts the capability of bypassing multi factor authentication which is the current best practice of protecting accounts from phishing attacks.</p>
+    <p>Here is a video demonstration of Modlishka, notice the domain is not Google domain, and that it’s even loaded over HTTPS:</p>
+    <iframe className="article-img" src="https://player.vimeo.com/video/308709275" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{display: 'block', margin: '10px auto'}}></iframe>
+    <p>Traditional phishing attacks are done by cloning a target website’s content and presenting that to victims. This generally involves a login page that looks similar or identical to the real login page, with which an adversary can then collect a victim's credentials as they attempt to log in. However, because the phishing page isn’t the real website, a user that has “logged-in” cannot be presented with their content and the adversary will often redirect them to the real website.</p>
+    <p>What Piotr has done is utilize what's called a reverse proxy. As you can see, reverse proxy phishing attacks have the possibility of being much more devastating than typical phishing attacks. Instead of hosting a cloned look-a-like of the website, a reverse proxy allows the adversary to act as a man-in-the-middle between their victims and the real web server. Account logins, multi-factor authentication methods, and the user’s content are all presented to the user just as if they were connected directly to the real website. All the while an adversary is sitting in the middle, able to monitor and even manipulate the traffic if they wished.</p>
+    <p>The adversary is able to read all of a phishing victim’s messages and emails, and even present them with fake messages and emails. If the website is one where credit card transactions are conducted, the adversary is able to see all of the credit card information. They could even present a victim with a fake incoming video chat from someone in their contacts list to prompt the user into allowing the adversary access to their microphone and camera. The list goes on, and it’s a terrifying reality.</p>
+    <p>Pair this with the url spoofing trick outlined in our other <Link to='/blog/hacking-explained-url-spoofing-trick' onClick={jumpToTop}>article</Link> it could even deceive more security consicous users who aren’t paying close attention:</p>
+    <img className="article-img" src="/images/blog/url-spoof/google-loaded.jpg" alt="http://https//www.google.com loaded in google chrome with http:// trimmed from the beginning"/>
+    <h2>How Does It Work?</h2>
+    <p>A typical phishing attack follows this general outline:</p>
+      <ol>
+        <li style={{marginTop: 10}}>Register a domain similar to that which is being impersonated (e.g. <i>www.instgram.com</i> vs. <i>www.instagram.com</i>)</li>
+        <li style={{marginTop: 10}}>Host a page on that domain with a login form that looks like that of the website being impersonated</li>
+        <li style={{marginTop: 10}}>Trick victims into going to the phishing domain when they think they are going to the real website</li>
+        <li style={{marginTop: 10}}>Collect user credentials as they attempt to login</li>
+        <li style={{marginTop: 10}}>Upon credential collection redirect to the user to the real domain</li>
+      </ol>
+    <p>From here the adversary has one or many victim credentials which they can then use to access the accounts of those phishing victims. This is why it's important to utilize multi-factor authentication. If the adversary only phishes credentials they are out of luck when they try to login as the victim and are prompted for a second factor authentication code.</p>
+    <p>So how do reverse proxy phishing tools like Modlishka work? Instead of serving a static clone of the website they are phishing, the adversary acts as a middleman between victims and the web servers they are trying to use. When the victim requests the phishing page, their request goes to the adversary’s reverse proxy server, which then passes this request on to the web server as if the victim were making the request. When the web server responds to the reverse proxy server, the proxy server sends that content back to the victim as the response to the victim’s original request:</p>
+    <img className="article-img" style={{display: 'block', margin: '20px auto'}} src="/images/blog/advanced-phishing/reverse-proxy.png" alt="Depiction of how a reverse proxy works"/>
+    <p>This is an oversimplified explanation as the reverse proxy has to make modifications to the content in order for content to render and operate properly. But if those modifications are done properly, the result can be a fully functional instance of any website.</p>
+    <h2>Can This Threat Be Mitigated?</h2>
+    <p>Web developers can add instructions to ask the browser what domain the page is currently on, and respond accordingly if the current page is not an approved domain. For example, something like this check can be added to the response content:</p>
+    <img className="article-img" style={{display: 'block', margin: '20px auto'}} src="/images/blog/advanced-phishing/domain-check.jpg" alt="if(window.location !== 'https://www.instagram.com')"/>
+    <p>This snippet of code will check if the currently loaded page is the approved domain. If this check fails it could be followed by additional instructions to notify the web server, refuse loading additional content, terminating authenticated sessions, etc.</p>
+    <p>Problem solved? Unfortunately, no. When the proxy server is making modifications to the responses coming from the real web server, those modifications will replace instances of instagram.com with instgram.com. This is done so that future requests continue to go through the proxy and not directly to instagram.com. If this check were added to the response, the proxy would replace instagram.com with instgram.com and the check would fail to detect any problems.</p>
+    <p>At first glance, this threat appears nearly impossible to detect or prevent. All of the content coming from instagram.com is passed through the reverse proxy, and any instructions for the phishing victim’s browser to detect if it is on the correct domain can be removed or modified by the adversary.</p>
+    <h2>Is There A Point Of Weakness?</h2>
+    <p>In order for these reverse proxies to present functioning websites to their victims, every instance of the domains being proxied (e.g. instagram.com) need to be detected and modified to go back through the reverse proxy (e.g. instgram.com). Additionally, any domain checking instructions need to be detected and modified or removed. These detection methods are a point of weakness in the entire system as it only takes missing one instance of the real domain to initiate a request to alert the server that something has gone wrong.</p>
+    <h2>How Can This Weakness Be Exploited For Defense?</h2>
+    <p>Utilizing different obfuscation techniques can make it very difficult for an automated system to detect and modify these domains and instructions. Defeating these detection methods will allow web developers to send instructions through to the client’s browser and determine if the domain they have loaded is an approved domain, and notify the web server if not.</p>
+    <p>The key to this defense method is adding enough complexity that automating the detection process is unfeasible, and would be too much work for a sophisticated adversary to find reverse engineering worth the effort.</p>
+    <p>Once these instructions are successfully sent past the detection methods and to the client’s browser, notifying the web server can either be done by initiating a request directly to a real domain, or by initiating a request back through the proxy:</p>
+    <img className="article-img" style={{display: 'block', margin: '20px auto'}} src="/images/blog/advanced-phishing/contacting-server-alternatives.png" alt="Two ways of contacting the web server"/>
+    <p>In the case where the request is not sent back through the proxy, it can be sent to the real domain, or to any domain which the proxy is not actively modifying and rerouting back through itself. Alternatively if the request is sent back through the proxy, the content needs to be obfuscated in a manner which would bypass the proxy’s detection methods before it forwards the content to the web server.</p>
+    <p>I’m privy to the former method as it only requires bypassing the detection methods on the way to the client. If a request can be generated directly from the client’s browser to the web server there is no opportunity for the proxy to detect or tamper with the information.</p>
+    <h2>How Can This Defense Be Implemented?</h2>
+    <p>There are many methods, and choices for degrees of complexity to be used in implementing this defense, but it will always include these three steps:</p>
+    <ol>
+      <li>Send instructions past proxy detection methods</li>
+      <li>Execute those instructions on the client's browser</li>
+      <li>Send information back to web server without the proxy detecting or tampering with the content</li>
+    </ol>
+    <p>One method I've developed involves utilizing the browser's cookie jar:</p>
+    <ol>
+      <li>Obfuscate and send the following line past proxy detection methods:
+        <img className="article-img" style={{display: 'block', margin: '20px auto'}} src="/images/blog/advanced-phishing/set-cookie.jpg" alt="document.cookie = 'domain_check_token=random_token; domain=.instagram.com;';"/>
+      </li>
+      <li>Execute that line in the client's browser early in the page loading process</li>
+      <li>Check for this cookie and confirm its value on future requests received by the web server</li>
+    </ol>
+    <p>When the web browser executes this line, it will try to add the cookie <i>domain_check_token</i> to the cookie jar for the domain <i>instagram.com</i>. If the user is actually on instagram.com, the browser will have no problem setting this cookie. However if the user is on the adversary's domain setting the cookie will fail silently and the web server will never see the cookie value in future requests.</p>
+    <p>There are a couple of nice things about this method to point out. The instructions needing to bypass the proxy detection methods are short. There's no need include instructions to initiate requests back to the domain, which would make it easier for an adversary to reverse engineer and find.</p>
+    <p>I recommend naming the <i>domain_check_token</i> cookie something less obvious, and <i>random_token</i> is a token your web server will generate and associate with the session of the current user. It should be randomly generated for each session to prevent token reuse.</p>
+    <p>The session management logic running on your web server can then check for the existence of this cookie on future requests and ensure the value is of the correct token. In the case where the cookie never arrives, you have an indication that the user may have fallen victim to one of these reverse proxies. If the cookie does arrive appropriately then you know that the user does in fact have your domain loaded.</p>
+    <p>One way to obfuscate these instructions is by chopping up their contents and assigning them to different variables. This makes it incredibly difficult for the proxy to automatically detect. It would require the adversary to be sophisticated and persistent enough to reverse engineer where in the code these instructions are executed. See the example below:</p>
+    <img className="article-img" style={{display: 'block', margin: '20px auto'}} src="/images/blog/advanced-phishing/obfuscation.jpg" alt="const a=document, b='coo', c='kie, d='domain_check_token', ... a[b+c] = `${d+..."/>
+    <p>Sprinkling each of those variable declarations somewhere in the code, randomizing where they are put, and passing them through callbacks would all make it even more difficult to reverse engineer, and near impossible to automate detecting and modifying.</p>
+    <p>Another thing to consider is the use of decoy cookie instructions to trick any attempts to automate the recognition of cookies being set. These decoy cookies could be put in places that would never be executed on the client, and if set indicate to the web server that someone is probably tampering with the content.</p>
+    <p>So while these attacks have the potential to be devastating to users, owners of websites have options to make it extremely difficult for adversaries to use this kind of attack on their users. If your organization would like help strategizing ways to protect your users from this threat and others, we’re here to help. Check out our <Link to='/services' onClick={jumpToTop}>Services</Link> page, and <Link to='/contact' onClick={jumpToTop}>Contact Us</Link> if you’re ready to take steps to protect your organization and clients.</p>
+  </div>)
+},{
   title: 'Protect Your Organization With A Security Risk Assessment',
   date: 'January 2019',
   author: 'Michael Wetherald',

@@ -124,12 +124,12 @@ const HomepageLayout = ({ activePage }) => (
           Hacking Attacks Explained
         </Divider>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          URL Spoofing Trick
+          Advanced Phishing Attacks and Defense
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          This simple but effective URL spoofing trick can fool even the most security conscious users into believing they are on a legitimate webiste...
+          A new phishing tool was released which allows hackers to monitor victims as they shop or send emails. Here's how it works, and how you can protect users who visit your...
         </p>
-        <Button as={Link} to='/blog/hacking-explained-url-spoofing-trick' size='large' style={{backgroundColor: '#008066', color: 'white'}} onClick={()=>window.scrollTo(0, 0)}>
+        <Button as={Link} to='/blog/hacking-explained-advanced-phishing-attacks-defense' size='large' style={{backgroundColor: '#008066', color: 'white'}} onClick={()=>window.scrollTo(0, 0)}>
           Read More
         </Button>
       </Container>
