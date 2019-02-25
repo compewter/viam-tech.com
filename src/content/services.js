@@ -15,7 +15,7 @@ export default [{
   imgAltText: 'conference room training session'
 },{
   name: 'Web Application Testing',
-  description: 'Web applications are increaingly lucrative targets for criminals to exploit. Find the vulnerabilities in your web applications before the criminals do.',
+  description: 'Web applications are increasingly lucrative targets for criminals to exploit. Find the vulnerabilities in your web applications before the criminals do.',
   img: '/images/services/code.jpeg',
   imgAltText: 'software code on monitor'
 },{
