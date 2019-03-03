@@ -1,135 +1,182 @@
 import React, { Component } from 'react'
 import {
   Container,
-  Form,
-  Header,
-  Label,
-  Table
+  Header
 } from 'semantic-ui-react'
-
+import './lossCalculator.css'
 import LossCalcQuestionModal from '../LossCalcQuestionModal'
+import ExpenseTable from '../ExpenseTable'
+import FactorAdjuster from '../FactorAdjuster'
 
 const expenseTypes = [
   {
     id: 'emp_down_hrly',
     name: 'Employee Downtime - Hourly Rate',
     description: 'Employee systems cannot be accessed or used while they are being held for ransom. This results in employees being paid for no, or severely impaired work.',
-    formula: 'downtime * avg_employee_hrly * employee_count * affected_percentage',
-    formula_text: 'Downtime x Average Hourly Rate x Number of Affected Employees'
+    compute: function(factors){
+      return factors.downtime * factors.avg_employee_hrly * factors.employee_count * factors.affected_percentage
+    },
+    equation_text: 'Downtime x Average Hourly Rate x Affected Percentage x Number of Employees'
   },
   {
     id: 'emp_down_rev',
     name: 'Employee Downtime - Lost Revenue',
     description: 'Employee systems cannot be accessed or used while they are being held for ransom. This results in employees being unable to generate additional revenue.',
-    formula: 'downtime * avg_employee_rev_gen * employee_count * affected_percentage',
-    formula_text: 'Downtime x Average Hourly Revenue Generation Rate x Number of Affected Employees'
+    compute: function(factors){
+      return factors.downtime * factors.avg_employee_rev_gen * factors.employee_count * factors.affected_percentage
+    },
+    equation_text: 'Downtime x Average Hourly Revenue Generation Rate x Affected Percentage x Number of Employees'
   },
   {
     id: 'rnsm_pymnt',
     name: 'Ransom Payment',
     description: 'The total sum of ransom being demanded to regain access to the systems.',
-    formula: 'rnsm_amt * endpoint_count * affected_percentage',
-    formula_text: 'Ransom Amount Per Endpoint x Number of Affected Endpoints'
+    compute: function(factors){
+      return factors.rnsm_amt * factors.endpoint_count * factors.affected_percentage
+    },
+    equation_text: 'Ransom Amount Per Endpoint x Affected Percentage x Number of Endpoints'
   },
   {
     id: 'it_resp',
     name: 'IT Staff Response',
+    compute: function(factors){
+      return factors.downtime * factors.it_staff_count * factors.it_hrly_rate
+    },
     description: 'The cost of your IT team first addressing the issue and following through to resolution',
-    formula: 'downtime * it_staff_count * it_hrly_rate',
-    formula_text: 'Business Hours to Recover x IT Staff Count x IT Staff Hourly Cost'
+    equation_text: 'Downtime x IT Staff Count x IT Staff Hourly Cost'
   },
   {
     id: 'inc_rsp',
     name: 'Incident Response',
     description: 'Cost of dispatching security professionals to assess what happened, contain the problem, eradicate it, and prevent it from happening again.',
-    formula: 'sec_resolve_time * sec_hrly_rate',
-    formula_text: 'Incident Response Hours * Hourly Security Staff Rate'
-  },
-  {
-    id: 'rep_damage',
-    name: 'Reputation Damage',
-    description: 'What kind of impact would this security incident have on your brand or reputation? What is the financial impact from your customers, partners, investors, shareholders learning of a security incident?',
-    formula: 'rep_damage',
-    formula_text: 'User estimated value'
-  },
-  {
-    id: 'acct_loss',
-    name: 'Major Account Loss',
-    description: 'If you could lose a major account from a missed deadline, what kind of financial damage could that cause?',
-    formula: 'acct_loss',
-    formula_text: 'User estimated value'
-  },
-  {
-    id: 'data_loss',
-    name: 'Unrecoverable Data',
-    description: 'Criminals have made poor quality ransomware, lost the keys, or refuse to provide them. You have no backups, or the backups have been compromised as well. What would this loss of data cost your organization?',
-    formula: 'acct_loss',
-    formula_text: 'User estimated value'
-  },
-  // {
-  //   id: '',
-  //   name: 'Time To Recreate Lost Work',
-  //   description: '',
-  //   formula: '',
-  //   formula_text: ''
-  // },
-  // {
-  //   id: '',
-  //   name: 'System Reinstallation',
-  //   description: '',
-  //   formula: '',
-  //   formula_text: ''
-  // }
+    compute: function(factors){
+      return factors.sec_resolve_time * factors.sec_hrly_rate
+    },
+    equation_text: 'Incident Response Hours x Hourly Security Staff Rate'
+  }
 ]
 
 class ContactForm extends Component {
   state = {
     estimates: {},
-    range_estimates: {},
     factors: {
-      acct_loss: 0,
-      affected_percentage: .45,
-      avg_employee_rev_gen: 90,
-      avg_employee_hrly: 40,
-      data_loss: 0,
-      downtime: 16,
+      //user provided
       employee_count: 100,
       endpoint_count: 100,
-      rnsm_amt: 600,
-      it_staff_count: 2,
+      server_count: 5,
+      annual_revenue: 40000000,
+      median_salary: 80000,
+      it_outsourced: true,
+      it_sec_outsourced: true,
+      sys_conf_mgmt: false,
+      automated_sftwr_ptchng: false,
+      sec_training: false,
+      phish_testing: false,
+      inc_resp_capable: false,
+      cntrl_logging: false,
+      nids: false,
+      siem: false,
+      net_segm: false,
+      auto_backups: false,
+      key_system_backups: false,
+
+      //about org inferred
+      avg_employee_rev_gen: 90,
+      avg_employee_hrly: 40,
       it_hrly_rate: 65,
       sec_hrly_rate: 210,
+      backup_freq: 7,
+      
+      //attack model
+      affected_percentage: .45,
+      it_staff_count: 2,
+      downtime: 16,
+      rnsm_amt: 600,
       sec_resolve_time: 32,
+
+      //indirect costs
+      acct_loss: 0,
+      data_loss: 0,
       rep_damage: 0,
-      '*': '*',
-      '+': '+',
-      '-': '-',
-      '/': '/',
-    }
+    },
+    sum: 0
   }
 
   componentDidMount(){
+    const {estimates} = this.calculateEstimates(this.state.factors)
     this.setState({
-      estimates: this.calculateEstimates(this.state.factors)
+      estimates
     })
   }
 
+  animateResults = () => {
+    //uncomment this to skip animations
+    // this.setState({
+    //   showScenario: true,
+    //   showTable: true,
+    //   visibleIndex: 9
+    // })
+
+    // return
+
+    this.setState({
+      showScenario: true
+    })
+
+    setTimeout(()=>{
+      this.setState({
+        showCount: true,
+        visibleIndex: 9
+      })
+    },600)
+
+    setTimeout(()=>{
+      this.setState({showDowntime: true})
+    },2400)
+
+    // setTimeout(this.animateTable,6000)
+    setTimeout(()=>{
+      this.setState({
+        showTable: true
+      })
+    },4000)
+    
+  }
+
+  animateTable = () => {
+    const {estimates} = this.state
+    this.setState({
+      showTable: true,
+      visibleIndex: 0,
+      sum: estimates[expenseTypes[0].id]
+    })
+
+    let i = 1;
+    const intvl = setInterval(()=>{
+      if(i < expenseTypes.length){
+        this.setState({
+          visibleIndex: i,
+          sum: this.state.sum + estimates[expenseTypes[i].id]
+        })
+      }else{
+        clearInterval(intvl)
+      }
+      i++
+    },2400)
+  }
 
   calculateEstimates = (factors)=>{
     const newEstimates = {}
+    let newSum = 0
     expenseTypes.forEach((expense)=>{
-      newEstimates[expense.id] = eval(expense.formula.split(' ').reduce((acc,arg)=>{ return acc+=factors[arg] },''))
+      newEstimates[expense.id] = expense.compute(factors)
+      newSum += newEstimates[expense.id]
     })
-    return newEstimates
-  }
 
-  updateFactors = (name, val)=>{
-    const newFactors = {...this.state.factors}
-    newFactors[name] = val
-    this.setState({
-      factors: newFactors,
-      estimates: this.calculateEstimates(newFactors)
-    })
+    return {
+      estimates: newEstimates,
+      sum: newSum
+    }
   }
 
   setRange = (factor, range) => {
@@ -140,76 +187,47 @@ class ContactForm extends Component {
     })
   }
 
+  updateFactors = (name, val)=>{
+    if(name === 'factors'){
+      this.setState({
+        factors: Object.assign({},this.state.factors,val)
+      })
+    }else if(name === 'done' && val === true){
+      this.setState({done: true})
+    }else{
+      const newFactors = {...this.state.factors}
+      newFactors[name] = val
+      if(val !== ''){
+        const {estimates, sum} = this.calculateEstimates(newFactors)
+        this.setState({
+          factors: newFactors,
+          estimates,
+          sum
+        })
+      }else{
+        this.setState({
+          factors: newFactors
+        })
+      }
+    }
+  }
+
   render () {
-    const { estimates, factors } = this.state
+    const { done, factors } = this.state
 
     return (
-      <Container>
+      <Container style={{minHeight: 600}}>
         <LossCalcQuestionModal setRange={this.setRange.bind(this)} updateFactor={this.updateFactors.bind(this)} />
-        {/*<Form style={{textAlign: 'left'}}>
-          <Header as='h3' style={{fontSize:'2em'}}>Loss Expectancy Calculator</Header>
-          <Form.Group>
-            <Label>Staff and Computer Counts</Label>
-            <Form.Input label='Number of Employees' icon='users' name='employee_count' value={factors.employee_count} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-            <Form.Input label='Number of Computers' icon='computer' name='endpoint_count' value={factors.endpoint_count} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-            <Form.Input label='IT Staff Count' icon='users' name='it_staff_count' value={factors.it_staff_count} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-          </Form.Group>
-          <Form.Group>
-            <Label>Employee Rates</Label>
-            <Form.Input label='Average Employee Hourly Cost' icon='dollar' name='avg_employee_hrly' value={factors.avg_employee_hrly} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-            <Form.Input label='Average Employee Hourly Revenue Generated' icon='dollar' name='avg_employee_rev_gen' value={factors.avg_employee_rev_gen} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-            <Form.Input label='IT Staff Hourly Cost' icon='dollar' name='it_hrly_rate' value={factors.it_hrly_rate} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-            <Form.Input label='Security Staff Hourly Rate' icon='dollar' name='sec_hrly_rate' value={factors.sec_hrly_rate} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-          </Form.Group>
-          <Form.Group>
-            <Label>Ransomware Event Factors</Label>
-            <div className="field">
-              <label>Percentage Of Affected Computers</label>
-              <span style={{textAlign:'center',display:'block'}}>{(factors.affected_percentage*100).toFixed(0)}%</span>
-              <Form.Input name='affected_percentage' value={factors.affected_percentage*100} onChange={(e,d)=>{this.updateFactors(d.name,+d.value/100)}} type='range' min="0" max="100" />
-            </div>
-            <Form.Input label='Incident Response Man-hours to Resolve' icon='clock outline'  name='sec_resolve_time' value={factors.sec_resolve_time} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-            <Form.Input label='Business Hours To Recover' icon='clock outline' name='downtime' value={factors.downtime} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-            <Form.Input label='Ransom Amount (per endpoint)' icon='dollar' name='rnsm_amt' value={factors.rnsm_amt} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-          </Form.Group>
-          <Form.Group>
-            <Label>Indirect Cost Estimates</Label>
-            <Form.Input label='Reputation Damage'  icon='dollar' name='rep_damage' value={factors.rep_damage} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-            <Form.Input label='Major Account Loss'  icon='dollar' name='acct_loss' value={factors.acct_loss} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-            <Form.Input label='Data Loss'  icon='dollar' name='data_loss' value={factors.data_loss} onChange={(e,d)=>{this.updateFactors(d.name,+d.value)}} type='number'/>
-          </Form.Group>
-        </Form>
-        */}
-        <Table celled striped style={{opacity:0}}>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Expense</Table.HeaderCell>
-              <Table.HeaderCell>Description</Table.HeaderCell>
-              <Table.HeaderCell>Estimate</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body> 
-            {expenseTypes.map((expense)=>{
-              return <Table.Row key={expense.id}>
-                <Table.Cell>{expense.name}</Table.Cell>
-                <Table.Cell>{expense.description}</Table.Cell>
-                <Table.Cell style={{color: 'red'}}>{formatToDollars(estimates[expense.id])}</Table.Cell>
-              </Table.Row>
-            })}
-            <Table.Row>
-              <Table.Cell></Table.Cell>
-              <Table.Cell style={{textAlign:'right'}}>Total:</Table.Cell>
-              <Table.Cell style={{color: 'red'}}>{formatToDollars(Object.values(estimates).reduce((sum,estimate)=>{return sum+=estimate;},0))}</Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table>
+
+        <Header as='h3' style={{fontSize: '2em', textAlign: 'left'}}>Loss Expectancy Calculator</Header>
+
+        <FactorAdjuster factors={factors} done={done} updateFactor={this.updateFactors.bind(this)} showTable={this.animateResults} />
+        
+        <ExpenseTable expenseTypes={expenseTypes} {...this.state} />
       </Container>
     )
   }
 }
 
-function formatToDollars(val){
-  return '$' + Number(val).toLocaleString('en')
-}
 
 export default ContactForm
