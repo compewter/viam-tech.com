@@ -6,6 +6,11 @@ export default [{
 },{
   name: 'Penetration Testing',
   description: 'How challenging would it be for criminals to compromise your organization? Test your organization\'s security posture to determine your strengths and weaknesses.',
+  img: '/images/services/hand-keyboard.jpeg',
+  imgAltText: 'shell command'
+},{
+  name: 'Security Auditing',
+  description: 'Compare your organization\'s infrastructure and processes against industry standard security controls and determine where your organization needs to harden it\'s security posture.',
   img: '/images/services/shell-ls.jpeg',
   imgAltText: 'shell command'
 },{
@@ -19,16 +24,16 @@ export default [{
   img: '/images/services/code.jpeg',
   imgAltText: 'software code on monitor'
 },{
+  name: 'General Security Advising',
+  description: 'Security is complicated. Our security engineers can provide the insight and support your organization needs.',
+  img: '/images/services/group-consulting.jpeg',
+  imgAltText: 'group fist bump'
+}/*,{
   name: 'Red Team Exercises',
   description: 'After you are satisfied with the security posture of your organization, its time to test against simulated real world attacks.',
   img: '/images/services/red-team.jpeg',
   imgAltText: 'hand over keyboard'
 },{
-  name: 'General Security Advising',
-  description: 'Security is complicated. Our security engineers can provide the insight and support your organization needs.',
-  img: '/images/services/group-consulting.jpeg',
-  imgAltText: 'group fist bump'
-}/*{
   name: 'Software Engineering',
   description: 'Whether its an innovative new concept or business-critical application Viam works with you to develop proprietary applications built exactly for your needs.',
   img: '/images/services/code.jpeg',
