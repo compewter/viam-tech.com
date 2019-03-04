@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 
 const signatureContent = {
   'Michael Wetherald': {
-    image: '/images/blog/michael.png',
+    image: '/images/blog/michael.jpg',
     title: 'Security Engineer and Co-Founder',
     signatureText: 'Michael is the inventor of a patent pending web proxy technology and brings to Viam his expertise in web and Linux security. Outside of work he enjoys carpentry, having built a dog mansion for his spoiled dog.'
   },
