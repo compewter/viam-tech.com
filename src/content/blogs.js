@@ -10,8 +10,57 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'Lessons From Major Security Breaches',
+  date: 'March 2019',
+  author: 'Michael Wetherald',
+  snippet: 'Carefully analyzing major security breaches provides insight on where things commonly go wrong. These three factors are always present...',
+  path: '/blog/lessons-learned-security-breaches',
+  content: (<div>
+    <p>Every few months we hear of yet another large organization being involved in a costly security incident.</p>
+    <ul>
+      <li>In 2016 it was disclosed that all 3 billion Yahoo accounts were hacked in the 2013 breach. (<a rel="noopener noreferrer" href='https://www.oath.com/press/yahoo-provides-notice-to-additional-users-affected-by-previously/' target='_blank'>Oath.com</a>)</li>
+      <li>In 2017 147.9 million consumers data was stolen in the Equifax Breach. (<a rel="noopener noreferrer" href='https://www.equifaxsecurity2017.com/2018/03/01/equifax-releases-updated-information-2017-cybersecurity-incident/' target='_blank'>Equifax</a>)</li>
+      <li>In the 2013 holiday season, Target reported hackers stole data from up to 41 million credit and debit cards from shoppers. (<a rel="noopener noreferrer" href='https://www.nbcnews.com/business/business-news/target-settles-2013-hacked-customer-data-breach-18-5-million-n764031' target='_blank'>NBC</a>)</li>
+      <li>On February 2019 Verifications.io had 763,117,241 emails leaked, many of these records also included personal information such as names, phone numbers, dates of birth, genders, and IP addresses. (<a rel="noopener noreferrer" href='https://securitydiscovery.com/800-million-emails-leaked-online-by-email-verification-service/' target='_blank'>SecurityDiscovery.com</a>)</li>
+    </ul>
+    <p>Can we analyze these major breaches for what went wrong and learn from them?</p>
+    
+    <h2>What Do Major Breaches Have In Common?</h2>
+    <p>An analysis of major breaches leads us to find 3 main preconditions for a major security breach. Adversaries find and exploit systems with all three of these attributes:</p>
+    <ol>
+      <b><li>The exploited system is available from the Internet</li></b>
+      <b><li>The exploited system has access to sensitive data</li></b>
+      <b><li>The exploited system is running an unpatched and vulnerable service</li></b>
+    </ol>
+    
+    <h2>Why are systems available from the Internet?</h2>
+    <p>This is kind of a silly question, but let’s think this through. Why would a system be accessible from the Internet?</p>
+    <p>Any company which hosts services such as web sites, VPNs, APIs which need to be accessible from outside of their physical office must expose the systems hosting these services to the Internet. For example, companies which allow their staff to work out of office must host some kind of service facing the Internet if they want the remote staff to be able to access internal services, generally using a VPN.</p>
+    <p>This is a classic example of the balance between security and convenience. The risk of opening these services up to the Internet is generally worth the added productivity, and companies choose take on the risk.</p>
+    
+    <h2>Why would systems have access to sensitive data?</h2>
+    <p>It’s likely the services you decide to host on the Internet will need to serve some sensitive data. What good is a service that doesn’t have access to the data you are looking for? Imagine logging into your email from home only to find all of the data in your emails is inaccessible. It would be useless to host an email service like that.</p>
+    <p>But this doesn’t mean you should allow this publicly facing system to have unlimited access to the source of that sensitive data, which we unfortunately see far too often. Instead, these systems should be restricted as much as possible to reduce the impact of those systems being compromised.</p>
+    <p>These publicly facing systems should be requesting the sensitive data from an entirely different system which is not accessible from the Internet. In the event the public system is compromised, it restricts compromised data to that which is loaded on on the public system during normal operations. While this is still a bad situation, it is preferable to immediately exposing all of your sensitive data to the adversary.</p>
+    <p>It also allows your security staff and monitoring systems a stricter set of data to analyze and recognize attempts to compromise the internal system serving the sensitive data.</p>
+    <p>If you can’t get away from hosting a system on the Internet, and serving sensitive data from that system, then you should take a defense in depth approach and limit the amount of data you are exposing with your public systems.</p>
+
+    <h2>Why would systems have unpatched vulnerabilities?</h2>
+    <p>How many times have you hit the “Update Later” option when your OS or software tells you there’s a new update? It’s a big interruption to productivity to install the updates and restart your system. Now think about doing this with your servers which provide functionality to not just you, but everyone else who uses that service.</p>
+    <p>Worse yet, lots of servers are configured with software that has not been thoroughly tested on the software being updated. Blindly applying updates is a risky move as often times the patch has unintended consequences and now your system has gone from functioning just fine to completely broken down.</p>
+    <p>We constantly work with companies that continue running old and vulnerable versions of Java on their systems because software they use every day to be productive does not work on the newer versions.</p>
+    <p>Combine all that with the fact that staff resources are limited and we have long delays from when patches are released to when they are applied.</p>
+
+    <h2>What can be done about this?</h2>
+    <p>It’s no wonder these breaches continue to happen. Companies are focused on the bottom line, and impacts to company productivity have immediate financial impact. Meanwhile the looming risk of a data breach is in the back of the minds of company leaders as they roll the dice on being the next headline.</p>
+    <p>Balancing the security risks and business productivity is a complicated process which requires time and effort to analyze, but it must be done. Starting off with a <i>Risk Assessment</i> will allow your company to intelligently determine how much and where resources should be invested in security.</p>
+    <p>Frequent <i>Vulnerability Assessments</i> and <i>Penetration Tests</i> will increase the likelihood your company will find these accessible and vulnerable systems before criminals do. Appropriate investments in <i>Security Monitoring</i> and <i>Incident Response</i> will allow your company to recognize and respond to indicators of compromise and limit the damage caused by the security breach.</p>
+    <p>Viam Technologies can help you understand the security risks facing your organization and provide you with the insight necessary to effectively mitigate them. <Link to='/contact' onClick={jumpToTop}>Contact Us</Link> today for a free consultation.</p>
+  </div>)
+},
+{
   title: 'Hacking Explained: Advanced Phishing Attacks and Defense',
-  date: 'January 2019',
+  date: 'February 2019',
   author: 'Michael Wetherald',
   snippet: 'A new phishing tool was released which allows hackers to monitor victims as they shop or send emails. Here\'s how it works, and how you can protect users who visit your...',
   path: '/blog/hacking-explained-advanced-phishing-attacks-defense',
