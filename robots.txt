@@ -1,3 +1,5 @@
 User-agent: *
 
 Sitemap: https://www.viam-tech.com/sitemap.xml
+
+Disallow:
