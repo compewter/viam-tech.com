@@ -1,4 +1,13 @@
 .header-menu-logo-desktop {
   height: 60px;
   margin: 10px 40px;
+  z-index: 9999;
+}
+
+.calc-header-menu {
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -o-filter: none !important;
+  -ms-filter: none !important;
+  filter: none !important; 
 }

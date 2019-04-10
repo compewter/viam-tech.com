@@ -44,10 +44,10 @@ export default class MobileContainer extends Component {
           >
             <Container>
               <Menu pointing secondary size='large'>
-                <Menu.Item onClick={this.handleToggle}>
+                <Menu.Item onClick={this.handleToggle} style={{display: activePage === 'calculator' ? 'none' : ''}}>
                   <Icon name='sidebar' />
                 </Menu.Item>
-                {activePage !== 'home' && <Image src="/images/logo/logo-side-text.png" className='header-menu-logo-mobile' alt='logo'/>}
+                {activePage !== 'home' && <Link className='logo-link-container' style={{paddingRight: activePage==='calculator' ? 0 : ''}} to={activePage === 'calculator' ? '/blog' : '/'}><Image src="/images/logo/logo-side-text.png" className='header-menu-logo-mobile' alt='logo'/></Link>}
               </Menu>
             </Container>
             {children}

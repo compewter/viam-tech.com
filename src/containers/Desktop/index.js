@@ -27,21 +27,34 @@ export default class DesktopContainer extends Component {
           once={false}
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
-        > 
-          <Menu
-            fixed={fixed ? 'top' : null}
-            pointing={!fixed}
-            secondary={!fixed}
-            size='large'
-          > 
-            <Image src="/images/logo/logo-header-desktop.png" className='header-menu-logo-desktop' alt='logo'/>
-            <Container>
-              <Menu.Item as={Link} active={activePage==='home'} to='/' onClick={()=>window.scrollTo(0, 0)} >Home</Menu.Item>
-              <Menu.Item as={Link} active={activePage==='services'} to='/services' onClick={()=>window.scrollTo(0, 0)} >Services</Menu.Item>
-              <Menu.Item as={Link} active={activePage==='blog'} to='/blog' onClick={()=>window.scrollTo(0, 0)} >Blog</Menu.Item>
-              <Menu.Item as={Link} active={activePage==='contact'} to='/contact' onClick={()=>window.scrollTo(0, 0)} >Contact</Menu.Item>
-            </Container>
-          </Menu>
+        >
+          {
+            activePage === 'calculator' ?
+              <Menu
+                fixed={fixed ? 'top' : null}
+                pointing={!fixed}
+                secondary={!fixed}
+                size='large'
+                className="calc-header-menu"
+              >
+                <a href='/#/blog' target="_blank"><Image src="/images/logo/logo-header-desktop.png" className='header-menu-logo-desktop' alt='logo'/></a>
+              </Menu>
+            :
+              <Menu
+                fixed={fixed ? 'top' : null}
+                pointing={!fixed}
+                secondary={!fixed}
+                size='large'
+              >
+                <Link to='/'><Image src="/images/logo/logo-header-desktop.png" className='header-menu-logo-desktop' alt='logo'/></Link>
+                <Container>
+                  <Menu.Item as={Link} active={activePage==='home'} to='/' onClick={()=>window.scrollTo(0, 0)} >Home</Menu.Item>
+                  <Menu.Item as={Link} active={activePage==='services'} to='/services' onClick={()=>window.scrollTo(0, 0)} >Services</Menu.Item>
+                  <Menu.Item as={Link} active={activePage==='blog'} to='/blog' onClick={()=>window.scrollTo(0, 0)} >Blog</Menu.Item>
+                  <Menu.Item as={Link} active={activePage==='contact'} to='/contact' onClick={()=>window.scrollTo(0, 0)} >Contact</Menu.Item>
+                </Container>
+              </Menu>
+          }
         </Visibility>
         <div style={{minHeight: window.innerHeight-250}}>
           {children}

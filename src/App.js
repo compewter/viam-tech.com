@@ -3,6 +3,8 @@ import './App.css';
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import BlogFeed from './containers/BlogFeed'
 import BlogEntry from './containers/BlogEntry'
+import LossCalculator from './containers/LossCalculator'
+import LossCalcResult from './containers/LossCalculator/Result'
 import Contact from './containers/ContactPage'
 import Services from './containers/ServicesPage'
 import Home from './containers/HomePage'
@@ -31,6 +33,8 @@ class App extends Component {
               return <BlogFeed activePage='blog' />
             }}/>
             <Route exact path="/contact" render={props => <Contact activePage='contact' />} />
+            <Route exact path="/calculator" render={props => <LossCalculator activePage='calculator' />} />
+            <Route exact path="/loss-calc-result" render={props => <LossCalcResult searchString={props.location.search} />} />
             <Route render={props => <Home />} />
           </Switch>
         </div>

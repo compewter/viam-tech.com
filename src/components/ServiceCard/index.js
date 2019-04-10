@@ -23,6 +23,7 @@ class ServiceCard extends Component {
   serviceClicked = (service) => {
     if(document.querySelector('#contact')){
       document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
+      if(this.props.mobile)
       // if(!document.getElementById('contact-message').value){
         setTimeout(()=>{
           this.slowType(`Hi! I'm interested in discussing ${service.name} for my organization.`)
@@ -63,7 +64,7 @@ class ServiceCard extends Component {
       >
         <Card.Content>
           <Card.Header style={{color: 'white', fontSize: '1.6em'}}>{service.name}</Card.Header>
-          <Card.Description style={{opacity: hovering || mobile ? 1 : 0, color: 'white', fontSize: '1.2em', marginTop: 50, fontWeight: 'bold', transition: 'opacity 0.3s'}}>{service.description}<br/></Card.Description>
+          <Card.Description style={{opacity: hovering || mobile ? 1 : 0, color: 'white', fontSize: '1.2em', marginTop: 50, fontWeight: 'bold', transition: 'opacity 0.3s'}}>{service.overlayText}<br/></Card.Description>
         </Card.Content>
       </Card>
     )
