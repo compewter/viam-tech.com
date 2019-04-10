@@ -17,7 +17,7 @@ class ContactForm extends Component {
       this.setState({message})
     }
     
-    if(window.location.pathname === '/#/contact'){
+    if(window.location.href.endsWith('/contact')){
       const messageQueue = 'Hi! I\'m interested in discussing cyber security services for my organization.'.split('');
       let index = -1;
       let speed = 45;

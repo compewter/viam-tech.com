@@ -23,7 +23,7 @@ class ServiceCard extends Component {
   serviceClicked = (service) => {
     if(document.querySelector('#contact')){
       document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
-      if(this.props.mobile)
+      // if(this.props.mobile)
       // if(!document.getElementById('contact-message').value){
         setTimeout(()=>{
           this.slowType(`Hi! I'm interested in discussing ${service.name} for my organization.`)

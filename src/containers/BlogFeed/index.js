@@ -20,7 +20,8 @@ const entries = blogs.map(blog=>{
     description: blog.snippet,
     link: true,
     as: Link,
-    to: blog.path
+    to: blog.path,
+    onClick: ()=>{window.scrollTo(0, 0)}
   }
 })
 

@@ -17,6 +17,10 @@ export default class DesktopContainer extends Component {
   hideFixedMenu = () => this.setState({ fixed: false })
   showFixedMenu = () => this.setState({ fixed: true })
 
+  componentDidMount(){
+    this.setState(this.state)
+  }
+
   render() {
     const { children, activePage } = this.props
     const { fixed } = this.state
@@ -48,10 +52,10 @@ export default class DesktopContainer extends Component {
               >
                 <Link to='/'><Image src="/images/logo/logo-header-desktop.png" className='header-menu-logo-desktop' alt='logo'/></Link>
                 <Container>
-                  <Menu.Item as={Link} active={activePage==='home'} to='/' onClick={()=>window.scrollTo(0, 0)} >Home</Menu.Item>
-                  <Menu.Item as={Link} active={activePage==='services'} to='/services' onClick={()=>window.scrollTo(0, 0)} >Services</Menu.Item>
-                  <Menu.Item as={Link} active={activePage==='blog'} to='/blog' onClick={()=>window.scrollTo(0, 0)} >Blog</Menu.Item>
-                  <Menu.Item as={Link} active={activePage==='contact'} to='/contact' onClick={()=>window.scrollTo(0, 0)} >Contact</Menu.Item>
+                  <Menu.Item as={Link} active={activePage==='home'} to='/' onClick={jumpToTop} >Home</Menu.Item>
+                  <Menu.Item as={Link} active={activePage==='services'} to='/services' onClick={jumpToTop} >Services</Menu.Item>
+                  <Menu.Item as={Link} active={activePage==='blog'} to='/blog' onClick={jumpToTop} >Blog</Menu.Item>
+                  <Menu.Item as={Link} active={activePage==='contact'} to='/contact' onClick={jumpToTop} >Contact</Menu.Item>
                 </Container>
               </Menu>
           }
@@ -63,6 +67,10 @@ export default class DesktopContainer extends Component {
       </Responsive>
     )
   }
+}
+
+function jumpToTop(){
+  window.scrollTo(0, 0)
 }
 
 DesktopContainer.propTypes = {
