@@ -13,7 +13,9 @@ import Footer from '../../components/Footer'
 import './Mobile.css'
 
 export default class MobileContainer extends Component {
-  state = {}
+  state = {
+    sidebarOpened: false
+  }
 
   handlePusherClick = () => {
     const { sidebarOpened } = this.state

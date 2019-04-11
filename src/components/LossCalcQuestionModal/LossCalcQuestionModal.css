@@ -1,9 +1,12 @@
 .modal {
   text-align: center !important;
+  position: relative;
 }
 
 .modal.mobile {
-  margin-top: -82px !important;
+  /*margin-top: -25% !important;*/
+  position: absolute;
+  top: 8%;
 }
 
 .modal-header {
@@ -11,7 +14,7 @@
   padding-top: 10px !important;
 }
 
-.modal-header.mobile {
+#loss-calc-header.modal-header.mobile {
   height: 75px;
   padding: 10px !important;
 }
@@ -47,6 +50,9 @@
 }
 
 .modal-content.mobile {
+  min-height: 220px;
+}
+.modal-content.mobile.no-input {
   min-height: 350px;
 }
 

@@ -5,9 +5,6 @@ import {
 import './Checklist.css'
 
 class Checklist extends Component {
-  state = {
-  }
-
   itemChecked = (checked, question) => {
     const {factors} = this.props
     //factors stored on parent
@@ -15,7 +12,6 @@ class Checklist extends Component {
   }
 
   render () {
-    const {} = this.state
     const {factors, isMobile, questions} = this.props
     return (
       <Form.Group style={{textAlign: 'left'}}>

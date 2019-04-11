@@ -22,7 +22,7 @@ class ServiceCard extends Component {
 
   serviceClicked = (service) => {
     if(document.querySelector('#contact')){
-      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
+      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth', block: 'start' })
       // if(this.props.mobile)
       // if(!document.getElementById('contact-message').value){
         setTimeout(()=>{

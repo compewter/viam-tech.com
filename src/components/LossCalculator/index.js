@@ -6,7 +6,6 @@ import {
 import './lossCalculator.css'
 import LossCalcQuestionModal from '../LossCalcQuestionModal'
 import ExpenseTable from '../ExpenseTable'
-import FactorAdjuster from '../FactorAdjuster'
 
 const expenseTypes = [
   {
@@ -146,6 +145,7 @@ class LossCalculator extends Component {
       this.setState({
         showTable: true
       })
+      document.querySelector('#scenario_details').scrollIntoView({ behavior: 'smooth' })
     },6000)
     
   }
@@ -221,7 +221,7 @@ class LossCalculator extends Component {
   }
 
   render () {
-    const { done, factors } = this.state
+    const { done } = this.state
     const { isMobile } = this.props
     return (
       <div className={`${done ? "loss-calc-done" : "loss-calc"} ${isMobile?'mobile':''}`}>

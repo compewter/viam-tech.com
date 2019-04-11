@@ -17,10 +17,6 @@ export default class DesktopContainer extends Component {
   hideFixedMenu = () => this.setState({ fixed: false })
   showFixedMenu = () => this.setState({ fixed: true })
 
-  componentDidMount(){
-    this.setState(this.state)
-  }
-
   render() {
     const { children, activePage } = this.props
     const { fixed } = this.state

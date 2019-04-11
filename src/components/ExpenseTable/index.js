@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import {
-  Button,
   Container,
-  Grid,
   Icon,
   Popup,
   Table
 } from 'semantic-ui-react'
-import template from '../../content/ransomwarePDFTemplate'
 
 class ExpenseTable extends Component {
 
@@ -94,10 +91,10 @@ class ExpenseTable extends Component {
 
   render () {
     const { expenseTypes, estimates, factors, isMobile, showScenario, showCount, showDowntime, showTable, showTotal, sum, visibleIndex } = this.props
-    console.log(factors)
+    
     return (
       <Container>
-        <div style={ showScenario ? {display: '', opacity: 1, textAlign: 'left'} : {height: 0, display: 'inline-block', opacity: 0, overflow: 'hidden'} }>
+        <div id="scenario_details" style={ showScenario ? {display: '', opacity: 1, textAlign: 'left'} : {height: 0, display: 'inline-block', opacity: 0, overflow: 'hidden'} }>
           <p>Your organization was hit with a ransomware attack.</p>
           <p style={{opacity: showCount ? 1 : 0, fontSize: 18, transition: '.5s ease-in-out'}}><b style={{fontSize: 20}}>{Math.ceil(factors.endpoint_count * factors.affected_percentage)}</b> endpoints were infected.</p>
           <p style={{opacity: showDowntime ? 1 : 0, fontSize: 18, transition: '.5s ease-in-out'}}>It has taken <b style={{fontSize: 20}}>{factors.downtime/8} business days</b> to recover business operations.</p>
@@ -128,7 +125,7 @@ class ExpenseTable extends Component {
           </Table.Body>
         </Table>
         <div style={visibleIndex >= expenseTypes.length -1 && showTable ? {opacity: 1, transition: '.5s ease-in-out'} : {opacity: 0}}>
-          {/*<i style={{marginBottom: 7, display:'block'}}>{`Your detailed report has been emailed to ${factors.email}.`}</i>*/}
+          <i style={{opacity: showTable ? 1 : 0, marginBottom: 7, display:'block'}}>{`Your detailed report has been emailed to ${factors.email}.`}</i>
           {/*<Button onClick={this.download} style={{backgroundColor:'#008066', color: 'white'}} size="huge">Download Report</Button>*/}
         </div>
       </Container>

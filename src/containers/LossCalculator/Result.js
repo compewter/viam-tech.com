@@ -1,10 +1,6 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import {
-  Container,
-  Icon,
-  Table,
-  Popup
+  Table
 } from 'semantic-ui-react'
 
 import services from '../../content/services'
@@ -156,7 +152,7 @@ export default class LossCalcResult extends Component {
         {/*Page 1*/}
         <div className="page-container">
           <h1 className="heading">Ransomware Cost Report</h1>
-          <img className="heading-logo" src="/images/logo/logo-bottom-text.svg" />
+          <img alt="logo" className="heading-logo" src="/images/logo/logo-bottom-text.svg" />
           <p className="heading-signature">From Viam Technologies</p>
           <p className="page-footer">© 2019 Viam Technologies | www.viam-tech.com | contact@viam-tech.com | (858) 295-8426</p>
         </div>

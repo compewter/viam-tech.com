@@ -6,7 +6,6 @@ import {
   Modal
 } from 'semantic-ui-react'
 import Checklist from '../Checklist'
-import DowntimeForm from '../DowntimeForm'
 import PercentageMeter from '../PercentageMeter'
 import './LossCalcQuestionModal.css'
 
@@ -38,7 +37,7 @@ const securityFactors = [
 class LossCalcQuestionModal extends Component {
   state = {
     done: false,
-    questionIndex: 0,
+    questionIndex: 8,
     validInput: false
   }
 
@@ -49,13 +48,13 @@ class LossCalcQuestionModal extends Component {
       header: '',
       q: 'How many employees are in your organization?',
       validate: (value)=>{
-        console.log(value)
         return /(^\d+$)|(^$)/.test(value)
       },
       factor: 'employee_count',
       inputType: 'number',
       icon: 'users',
       percent: 12,
+      pattern: "[0-9]*",
       showInput: true
     },
     {
@@ -117,20 +116,27 @@ class LossCalcQuestionModal extends Component {
         factors['it_hrly_rate'] = computedVal
         factors['it_outsourced'] = val
         update('it_hrly_rate', computedVal)
+        if(val){
+          factors['sec_hrly_rate'] = 210
+          factors['it_sec_outsourced'] = true
+          update('sec_hrly_rate', 210)
+          return true
+        }
+        return false
       },
       percent: 55,
       showInput: false
     },
     {
-      q: 'Does your existing IT staff have the expertise neccessary to respond to security incidents?',
+      q: 'Does your IT staff have security training and expertise?',
       factor: 'it_sec_outsourced',
       options: [{
         label: 'Yes',
-        value: true
+        value: false
       },
       {
         label: 'No',
-        value: false
+        value: true
       }],
       compute: function(val, factors, update){
         const computedVal = val ? 210 : factors.it_hrly_rate
@@ -185,14 +191,11 @@ class LossCalcQuestionModal extends Component {
         let downtime = 16
         let affected_percentage = 15
         orgFactors.forEach((fctr)=>{
-          console.log(fctr, factors[fctr])
           if(!factors[fctr]){
             downtime += factorWeights[fctr].downtime
             affected_percentage += factorWeights[fctr].percentage
           }
         })
-
-        console.log(downtime, affected_percentage)
 
         factors.downtime = downtime
         update('downtime', downtime)
@@ -230,20 +233,23 @@ class LossCalcQuestionModal extends Component {
       showInput: false
     },
     {
-      q: 'Where would you like us to send your detailed loss expectancy report?',
+      q: 'Where would you like us to email your report?',
       factor: 'email',
       placeholder: 'email address',
       inputType: 'email',
+      top: '3%',
       percent: 90,
       pattern:"/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/",
+      allowInput: true,
       validate: (value)=>{
-        return true
+        return /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(value)
       },
       showInput: true
     },
     {
       q: 'What is your name?',
       factor: 'name',
+      top: '3%',
       percent: 95,
       validate: (value)=>{
         return true
@@ -251,11 +257,11 @@ class LossCalcQuestionModal extends Component {
       showInput: true
     },
     {
-      q: 'What is your phone number? Next our system will display your report',
+      q: 'What is your phone number? Next you will see your report',
       factor: 'phone_number',
       inputType: 'tel',
       validate: (value)=>{
-        return /(^[\d\-\(\)]+$)|(^$)/.test(value)
+        return /^(1\s?)?((\([0-9]{3}\))|[0-9]{3})[\s\-]?[\0-9]{3}[\s\-]?[0-9]{4}$|(^$)/.test(value)
       },
       percent: 100,
       showInput: true
@@ -265,6 +271,9 @@ class LossCalcQuestionModal extends Component {
         return <p style={{marginTop: 100, marginBottom: 150, transition: 'opacity .5s ease-in-out', fontWeight: 'bold', fontSize: '2em', opacity: this.state.showLoadingText ? 1 : 0, minHeight: 20}}>{this.state.loadingText}</p>
       },
       preCompute: ()=>{
+        //use this to skip to expense table
+        // setTimeout(this.next, 500)
+
         const timeline = [
           {
             loadingText: 'Estimating employee time lost...',
@@ -319,7 +328,7 @@ class LossCalcQuestionModal extends Component {
             }
           },time)
         }
-        setTimeout(this.next, 7500)
+        setTimeout(this.next, 8500)
       },
       percent: 100
     }
@@ -343,9 +352,10 @@ class LossCalcQuestionModal extends Component {
     const {setRange, updateFactor} = this.props
     const {factors, questions} = this
     const question = questions[questionIndex]
+    let skip = false
 
     if(question.compute){
-      question.compute(value, factors, updateFactor)
+      skip =question.compute(value, factors, updateFactor)
     }else if(typeof value === 'object'){
       setRange(question.factor, question.options[value])
     }else if(question.factor){
@@ -353,11 +363,12 @@ class LossCalcQuestionModal extends Component {
       updateFactor(question.factor, value)
     }
 
-    if(questionIndex+1 === questions.length - 1){
+    const nextIndex = skip ? questionIndex+2 : questionIndex+1
+    if(nextIndex === questions.length - 1){
       this.submit()
     }
 
-    if(questionIndex + 1 === questions.length){
+    if(nextIndex === questions.length){
       this.setState({
         done: true
       })
@@ -365,11 +376,11 @@ class LossCalcQuestionModal extends Component {
       updateFactor('done', true)
     }else{
       this.setState({
-        value: factors[questions[questionIndex+1].factor] || '',
-        validInput: !!factors[questions[questionIndex+1].factor],
-        questionIndex: questionIndex+1
+        value: factors[questions[nextIndex].factor] || '',
+        validInput: !!factors[questions[nextIndex].factor],
+        questionIndex: nextIndex
       })
-      questions[questionIndex+1].preCompute && questions[questionIndex+1].preCompute(factors)
+      questions[nextIndex].preCompute && questions[nextIndex].preCompute(factors, updateFactor)
     }
   }
 
@@ -380,7 +391,9 @@ class LossCalcQuestionModal extends Component {
     //save current value
     factors[questions[questionIndex].factor] = this.state.value
 
-    const prevIndex = questionIndex-1
+    let prevIndex = questionIndex-1
+    if(questions[prevIndex].factor === 'it_sec_outsourced' && factors.it_outsourced)
+      prevIndex = questionIndex - 2
     const prevValue = factors[questions[prevIndex].factor]
     this.setState({
       questionIndex: prevIndex,
@@ -398,8 +411,8 @@ class LossCalcQuestionModal extends Component {
     const q = questions[questionIndex] || {}
 
     return (
-      <Modal className={`modal ${isMobile?'mobile':''}`} open={!done} size={isMobile ? 'tiny' : 'large'} centered={isMobile}>
-        <Modal.Header className={`modal-header ${isMobile?'mobile':''}`}>
+      <Modal className={`modal ${isMobile?'mobile':''}`} open={!done} size={isMobile ? 'tiny' : 'large'} centered={isMobile} style={{top: q.top || '8%'}}>
+        <Modal.Header id="loss-calc-header" className={`modal-header ${isMobile?'mobile':''}`}>
           {questionIndex === 0 ? 
             <p className="modal-initial-heading">Loss Expectancy Calculator</p>
           : 
@@ -411,13 +424,14 @@ class LossCalcQuestionModal extends Component {
           </div>
         }</Modal.Header>
 
-        <Modal.Content className={`modal-content ${isMobile?'mobile':''}`} >
-          {/*<Modal.Description className={`modal-description ${isMobile?'mobile':''}`} >*/}
+        <Modal.Content className={`modal-content ${isMobile?'mobile':''} ${q.showInput || q.options ?'':'no-input'}`} >
           <Container>
             <b className={`modal-question ${isMobile?'mobile':''}`}>{q.q}</b>
             <div className={`modal-input-container ${isMobile? 'mobile' : ''}`}>
               {q.showInput && 
-                <Form.Input 
+                <Form.Input
+                  autoFocus
+                  id="loss-calc-input"
                   icon={q.icon}
                   placeholder={q.placeholder}
                   value={this.state.value||''}
@@ -426,13 +440,11 @@ class LossCalcQuestionModal extends Component {
                       this.next()
                   }}
                   type={q.inputType || 'text'}
-                  // pattern={q.pattern || ''}
+                  pattern={q.pattern || ''}
                   onChange={(e,{value})=>{
-                    if(q.validate(value))
-                      this.setState({value, validInput: value.length>0})
+                    this.setState({value, validInput: value.length > 0 && q.validate(value)})
                   }}
                 />}
-              {/*<p className="modal-question-description">{q.description}</p>*/}
               {q.options && <div>
                   {q.options.map((option, ind)=>{
                     return <Form.Radio 
@@ -452,7 +464,6 @@ class LossCalcQuestionModal extends Component {
               <Button className={`next-button ${isMobile?'mobile':''}`} disabled={!validInput} onClick={this.next}>{questionIndex === questions.length-2 ? 'Get Report' : 'Continue'}</Button>
             </div>
           </Container>
-          {/*</Modal.Description>*/}
         </Modal.Content>
       </Modal>
     )
