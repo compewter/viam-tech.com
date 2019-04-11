@@ -37,7 +37,7 @@ const securityFactors = [
 class LossCalcQuestionModal extends Component {
   state = {
     done: false,
-    questionIndex: 8,
+    questionIndex: 0,
     validInput: false
   }
 

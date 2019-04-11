@@ -134,7 +134,7 @@ class ExpenseTable extends Component {
 }
 
 function formatToDollars(val){
-  return '$' + Number(val).toLocaleString('en')
+  return Number(val).toLocaleString('en-US', {style:"currency", currency:"USD"})
 }
 
 export default ExpenseTable
