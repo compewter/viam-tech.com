@@ -28,7 +28,8 @@ const LossCalculatorContainer = ({activePage}) => (
   <ResponsiveContainer activePage={activePage}>
     <Helmet>
       <title>Cyber Security Services | Viam Technologies</title>
-      <meta name="description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
+      <meta name="description" content="How much would a ransomware attack cost your organization? Get an estimate with our free calculator." />
+      <meta name="og:description" content="How much would a ransomware attack cost your organization? Get an estimate with our free calculator." />
       <meta name="robots" content="noindex,nofollow" />
     </Helmet>
     <Segment style={{ padding: '6em 2em', backgroundColor: 'white'}} vertical textAlign='center'>

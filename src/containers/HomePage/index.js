@@ -39,6 +39,7 @@ const HomepageLayout = ({ activePage }) => (
     <Helmet>
       <title>Cyber Security Consulting | Viam Technologies</title>
       <meta name="description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
+      <meta name="og:description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
     </Helmet>
     <Segment style={{ padding: '8em 0em', backgroundColor:'#f9f9f9' }} vertical>
       <Grid container stackable verticalAlign='middle'>
