@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/brand-icons.a046592b.woff"
   },
   {
-    "revision": "f1611bd9beea7e3390d6",
+    "revision": "0ef73d15ebb2fa29d572",
     "url": "/static/css/main.b818a945.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/static/media/PlayfairDisplay-Bold.21988bd5.ttf"
   },
   {
-    "revision": "fc82208ccbf99eecaa61",
-    "url": "/static/js/2.844d0c0c.chunk.js"
+    "revision": "90fa4d0b9ad02ffd141d",
+    "url": "/static/js/2.344bb704.chunk.js"
   },
   {
     "revision": "cd6c777f1945164224dee082abaea03a",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/static/media/brand-icons.e8c322de.woff2"
   },
   {
-    "revision": "f1611bd9beea7e3390d6",
-    "url": "/static/js/main.0b499399.chunk.js"
+    "revision": "0ef73d15ebb2fa29d572",
+    "url": "/static/js/main.4233bc6e.chunk.js"
   },
   {
     "revision": "9c74e172f87984c48ddf5c8108cabe67",
@@ -88,11 +88,11 @@ self.__precacheManifest = [
     "url": "/static/media/PlayfairDisplay-Black.a20fb5c4.ttf"
   },
   {
-    "revision": "fc82208ccbf99eecaa61",
+    "revision": "90fa4d0b9ad02ffd141d",
     "url": "/static/css/2.0a1322f0.chunk.css"
   },
   {
-    "revision": "e2888a4a09c1dc13e0dad044a120a984",
+    "revision": "cbe13a1bc55d31d57bc70c5aa3e044c1",
     "url": "/index.html"
   }
 ];
