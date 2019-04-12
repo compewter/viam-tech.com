@@ -41,6 +41,7 @@ const BlogFeed = ({activePage}) => (
   <ResponsiveContainer activePage={activePage}>
     <Helmet>
       <title>Cyber Security Blog | Viam Technologies</title>
+      <meta property="og:title" content="Cyber Security Blog | Viam Technologies" />
       <meta name="description" content="Read about why preparing for cyber security incidents is critical for your organization. Our hacking explained articles walk you through how common attacks work." />
       <meta name="og:description" content="Read about why preparing for cyber security incidents is critical for your organization. Our hacking explained articles walk you through how common attacks work." />
     </Helmet>

@@ -25,7 +25,8 @@ ResponsiveContainer.propTypes = {
 const ContactPage = ({activePage}) => (
   <ResponsiveContainer activePage={activePage}>
     <Helmet>
-      <title>Viam Technologies | Contact Us</title>
+      <title>Contact Us | Viam Technologies</title>
+      <meta property="og:title" content="Contact Us | Viam Technologies" />
       <meta name="description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
       <meta name="og:description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
     </Helmet>

@@ -27,6 +27,7 @@ const BlogEntry = ({activePage, blog}) => (
   <ResponsiveContainer activePage={activePage}>
     <Helmet>
       <title>{blog.title} | Viam Technologies</title>
+      <meta property="og:title" content={`${blog.title} | Viam Technologies`} />
       <meta name="description" content={blog.snippet} />
       <meta name="og:description" content={blog.snippet} />
       <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>

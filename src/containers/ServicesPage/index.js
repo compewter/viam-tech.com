@@ -29,6 +29,7 @@ const ServicesPage = ({activePage}) => (
   <ResponsiveContainer activePage={activePage}>
     <Helmet>
       <title>Cyber Security Services | Viam Technologies</title>
+      <meta property="og:title" content="Cyber Security Services | Viam Technologies" />
       <meta name="description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
       <meta name="og:description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
     </Helmet>
