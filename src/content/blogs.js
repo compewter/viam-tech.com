@@ -10,6 +10,34 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'Securing Your Company From Hackers - Where to Start?',
+  date: 'April 2019',
+  author: 'Michael Wetherald',
+  snippet: 'Cut through the endless amount of information and snake oil and read how you can prioritize where to start securing your organization from...',
+  path: '/blog/where-to-start',
+  content: (<div>
+    <p>You’ve heard about another security breach, maybe this time it’s one of your suppliers or distributors, or another massive breach in the news. It’s another stressful reminder that it could happen to your organization.</p>
+    <h2>Information Overload</h2>
+    <p>So you decide to address the problem, and the first thing you find is… there’s a lot of information. Take a look at these industry standard security controls.</p>
+    <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">POSTER | SANS 20 CRITICAL SECURITY CONTROLS - DL &amp; Print crucial info for defending your org. <a href="http://t.co/MbpeDjiwRz">http://t.co/MbpeDjiwRz</a> <a href="http://t.co/nqWx9oRl5t">pic.twitter.com/nqWx9oRl5t</a></p>&mdash; SANS Institute (@SANSInstitute) <a href="https://twitter.com/SANSInstitute/status/617049110533775360?ref_src=twsrc%5Etfw">July 3, 2015</a></blockquote>
+    <p>Just looking at the chart is daunting. You’ll find 20 broad categories that each break out into several action items. Trying to implement all of these at once, even with a massive security budget, would likely be a catastrophic failure or inefficient at best.</p>
+    <p>Don’t get me wrong, I’m not knocking these security controls. They’re industry standards for good reason. But we’re exploring where to start.</p>
+    <h2>The Solution: Prioritize with Risk Assessments</h2>
+    <p>Risk assessments involve analyzing your organization’s unique mission and infrastructure.</p>
+    <p>A risk assessment allows your organization to determine:</p>
+    <ul>
+      <li>What information and systems are most valuable to your operations?</li>
+      <li>What could go wrong with those systems and information?</li>
+      <li>How likely is it that something could go wrong?</li>
+      <li>What would it cost if it does go wrong?</li>
+      <li>What would it cost to reduce the risks involved to an acceptable level?</li>
+    </ul>
+    <p>The result of this assessment is a <b>roadmap of prioritized actions</b> to take high impact steps of reducing the likelihood and impact of a security event. By assessing what these security events would cost, you can <b>budget</b> what amount is worth investing to <b>reduce risk to an acceptable level.</b></p>
+    <p>Without this prioritization process you can’t be sure you are effectively mitigating the risks facing your organization. You could spend a fortune trying to secure everything all at once, but not only is it an endless pit of time and money, it’s ineffective.</p>
+    <p><Link to='/contact' onClick={jumpToTop}>Contact us</Link> today to schedule a risk assessment to provide you with a security roadmap and a justifiable security budget to ensure you are taking the steps necessary to mitigate risk.</p>
+  </div>)
+},
+{
   title: 'Lessons From Major Security Breaches',
   date: 'March 2019',
   author: 'Michael Wetherald',

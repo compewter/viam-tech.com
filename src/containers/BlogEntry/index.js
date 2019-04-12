@@ -28,6 +28,8 @@ const BlogEntry = ({activePage, blog}) => (
     <Helmet>
       <title>{blog.title} | Viam Technologies</title>
       <meta name="description" content={blog.snippet} />
+      <meta name="og:description" content={blog.snippet} />
+      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
     </Helmet>
     <Segment id='blog-entry' vertical>
       <Container>

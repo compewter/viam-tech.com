@@ -108,12 +108,12 @@ const HomepageLayout = ({ activePage }) => (
     <Segment style={{ padding: '6em 0em', backgroundColor: 'white' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Protect Your Organization with a Security Risk Assessment
+          Securing Your Organization - Where to Start?
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          A security risk assessment is a crucial step for mitigating the cyber security risks in your organization. Without identifying and addressing the risks in your environment, you have no chance to prevent a catastrophic...
+          Cut through the endless amount of information and snake oil and read how you can effectively prioritize where to spend your security budget and efforts...
         </p>
-        <Button as={Link} to='/blog/protect-your-org-risk-assessment' size='large' style={{backgroundColor: '#008066', color: 'white'}} onClick={()=>window.scrollTo(0, 0)}>
+        <Button as={Link} to='/blog/where-to-start' size='large' style={{backgroundColor: '#008066', color: 'white'}} onClick={()=>window.scrollTo(0, 0)}>
           Read More
         </Button>
         <Divider
