@@ -10,6 +10,31 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'What is Phishing?',
+  date: 'May 2019',
+  author: 'Michael Wetherald',
+  snippet: 'Phishing is widely considered the largest threat to companies in 2019. What is it? And how can we mitigate the risk...',
+  path: '/blog/what-is-phishing',
+  content: (<div>
+    <p>Phishing is a cyber attack wherein an adversary sends a message to a victim intending to deceive the victim into disclosing sensitive information. Frequently this tactic is used by criminals to fool victims into disclosing financial information, or credentials for services which might hold valuable information.</p>
+    <h2>Phishing Is An Increasing Threat</h2>
+    <p>Recent reports indicate phishing attacks have become <a rel="noopener noreferrer" target="_blank" href="https://www.cpomagazine.com/cyber-security/phishing-attacks-now-more-common-than-malware/">more common than malware</a>. As companies invest millions of dollars in expensive technical solutions to prevent security breaches, the underlying risk of users mistakenly granting access remains.</p>
+    <p>In February 2015, the health insurance provider Anthem suffered a major data breach caused by a <a rel="noopener noreferrer" target="_blank" href="https://www.csoonline.com/article/2880352/anthem-confirms-data-breach-but-full-extent-remains-unknown.html">successful phishing attack</a>. This involved the theft of Personally Identifiable Information (PII) of up to 78.8 million current and former customers, and a total cost estimated to exceed $100 million.</p>
+    <h2>How Is It Done?</h2>
+    <p>The goal of a phishing attack is to deceive the recipient into believing the contents of the phishing message include something they want or need. It may be a time sensitive warning from their bank, or important information regarding their responsibilities at work. Something they desire is hidden behind a link to click, or file to download.</p>
+    <h2>How Can You Address The Threat?</h2>
+    <p>Because companies need to balance security restrictions and the freedom users need to efficiently perform their duties, users often need the ability to download and open files without interruption. For the same reasons, there are typically no automated technical solutions in place to prevent the users from opening a web page and typing in their credentials.</p>
+    <p>The good news is, there are strategies available to find a proper balance of security and functionality. This includes:</p>
+      <ul>
+        <li>Implement contingencies to mitigate the damage when a user inevitability falls prey to a phishing attack.</li>
+        <li>Have your employees take part in Security Awareness Training.</li>
+        <li>Run simulated phishing campaigns against your users to help determine how likely a phishing attack is to succeed, and who might need additional training.</li>
+      </ul>
+    <h2>Viam Technologies Can Help</h2>
+    <p>We can help you explore strategies for protecting your organization from phishing attacks. We offer an entertaining Security Awareness Training program, and can run automated phishing campaigns to keep your users on their toes. We’re also happy to sit down with you to make sure you are doing what you can to mitigate all of the common cybersecurity risks facing your organization. Finding the right balance between security and functionality is key. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
+  </div>)
+},
+{
   title: 'Securing Your Company From Hackers - Where to Start?',
   date: 'April 2019',
   author: 'Michael Wetherald',
