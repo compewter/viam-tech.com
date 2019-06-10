@@ -10,6 +10,25 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'Preventive Security Is Not Enough',
+  date: 'June 2019',
+  author: 'Michael Wetherald',
+  snippet: 'Preventive security solutions like, anti-virus and firewalls are not enough. Without detection, you won\'t know how or when your security controls are failing...',
+  path: '/blog/preventive-security-not-enough',
+  content: (<div>
+    <p>Companies focus nearly all of their security efforts on preventive measures, which are important, but not enough. Without detection, you won’t know when or how your security controls are failing. Many people recognize this when they buy security cameras for their homes. The preventive security controls (e.g. locks on doors and windows) are prone to failure when faced with a sufficiently motivated adversary. This is no different with the cybersecurity controls (e.g. antivirus and firewalls) at your organization.</p>
+    <h2>Most Companies Are Flying Blind</h2>
+    <p>Companies continue to operate under the paradigm that prevention alone is enough despite overwhelming evidence to the contrary. A recent <a rel="noopener noreferrer" target="_blank" href="https://www.ibm.com/security/data-breach">study</a> from IBM found the average US company takes 206 days to detect when they have a security breach. The infamous Equifax breach was detected only because the criminals were downloading so much data it was degrading their network performance, not because of any detection mechanisms.</p>
+    <h2>Mistakes Happen</h2>
+    <p>In some cases security incidents are caused by mistakes by authorized users operating within the scope of their organization’s preventive security controls. An example of this is the recent verifications.io data breach of 800+ million emails, names, phone numbers, addresses, dates of birth, and more personally identifiable information. This massive data breach was caused by an administrator who mistakenly configured the publicly accessible database without a password.</p>
+    <h2>Detection Is A Must</h2>
+    <p>Effective detection mechanisms will quickly alert you when something has gone wrong, allowing your staff to respond before serious damage can be done. Instead of solely focusing on prevention, your security operations should be optimized for the ability to monitor and control what is happening in your environment. We recommend a defense-in-depth approach with mechanisms to detect, alert, and respond when each layer fails.</p>
+    <p>An effective monitoring strategy involves only generating enough logs and alerts as you have the staff and budget to review in a timely manner. Timely log auditing facilitates a quick response, which can be the difference between a security breach being contained versus regressing into a disaster. To get the most out of your security budget, focus on monitoring the most critical systems and data in your organization, and limit alerts to only as many of the most severe events your staff can process.</p>
+    <h2>Take Steps To Protect Your Organization</h2>
+    <p>No security controls are 100% effective, and it’s time we stop pretending they are. Viam Technologies is here to help you navigate the challenges associated with securing your organization. We can help you determine what types of detection mechanisms would be best for your organization, or if you already have some, if they are sufficient. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
+  </div>)
+},
+{
   title: 'What is Phishing?',
   date: 'May 2019',
   author: 'Michael Wetherald',
