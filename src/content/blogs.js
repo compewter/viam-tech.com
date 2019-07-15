@@ -10,6 +10,26 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'Security Awareness Training - Why You Need It',
+  date: 'July 2019',
+  author: 'Michael Wetherald',
+  snippet: 'A staggering 90% of successful network breaches are caused by user error. Have you done enough to mitigate this risk at your organization?',
+  path: '/blog/security-awareness-training',
+  content: (<div>
+    <h2>Why Your Organization Needs Security Awareness Training</h2>
+    <p>Users continue to be the weakest link in every organization's cybersecurity posture. According to a <a rel="noopener noreferrer" target="_blank" href="https://www.verizondigitalmedia.com/blog/2017/07/2017-verizon-data-breach-investigations-report/">Verizon Data Breach Report</a>, a staggering <b>90% of successful network breaches are caused by user error</b>. Criminals target users because they continue to act as easy openings around much of the expensive cybersecurity controls organizations implement.</p>
+    <h2>What Is It?</h2>
+    <p>Security Awareness Training focuses efforts directly at the source of this problem, and a successful program will shift your biggest cybersecurity liability toward being a vigilant security detection network. Security Awareness Training will bring your employees together on the same page regarding how their behavior online is a risk to the company.</p>
+    <p>In addition to outlining why it is important for them to not engage in risky behavior, a user recognizing and reporting indicators of compromise can be the difference between a catastrophic security breach and preventing one entirely.</p>
+    <h2>How To Get The Most Out Of Training</h2>
+    <p>The goal of Security Awareness Training is to rally your employees into being vigilant and proactive about the ongoing cybersecurity threats impacting your organization. To effectively produce this environment, implement ongoing training along with simulated phishing attacks to keep users on their toes.</p>
+    <p>If you think your users are security-conscious enough to not fall for a phishing attack, put them to the test with a simulated phishing attack. You may be surprised by how many of your employee’s fall prey to these simple attacks. Users who continually fail to recognize phishing attempts can be provided additional training, or have additional security controls put in place.</p>
+    <h2>Take Steps To Protect Your Organization</h2>
+    <p>Viam Technologies can help shift your staff away from being the biggest cybersecurity liability at your company, and into a vigilant force to defend against cybersecurity threats. We offer entertaining Security Awareness Training and simulated phishing attacks.</p>
+    <p>Regardless of the maturity of your cybersecurity program, Viam can help ensure you are taking the steps necessary to mitigate the cybersecurity risk you face. Contact us today for a free consultation.</p>
+  </div>)
+},
+{
   title: 'Preventive Security Is Not Enough',
   date: 'June 2019',
   author: 'Michael Wetherald',
