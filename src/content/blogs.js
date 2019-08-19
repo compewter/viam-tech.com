@@ -10,6 +10,41 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'The Hacker Methodology - How Is It Done?',
+  date: 'August 2019',
+  author: 'Michael Wetherald',
+  snippet: 'Most successful breaches are executed by adversaries following a similar methodology. Understanding that methodology is key to a successful defense.',
+  path: '/blog/hacker-methodology',
+  content: (<div>
+    <h2>Know Your Enemy</h2>
+    <p>In order to defend yourself, you need to know what your opponent is capable of and predict what he is likely to do. </p>
+    <p>Before we go through the typical methodology of a hacker, let’s analyze a set of characteristics seen in nearly every security breach so that we can see at which stage in the hacker methodology they are able to successfully meet those characteristics.</p>
+    <p>Nearly every successful breach has the following characteristics:</p>
+    <ol>
+      <b><li>A host accessible from the Internet</li></b>
+      <b><li>Scanning and service enumeration is not detected or not acted upon</li></b>
+      <b><li>An unpatched vulnerability is exploited</li></b>
+    </ol>
+    <p>Understanding these characteristics and an adversary’s methodology for meeting them is crucial for an adequate defense.</p>
+    <h2>The Hacker Methodology</h2>
+    <p>Adversaries will typically follow this well established methodology. Keep in mind, more sophisticated attackers and attacks will follow more of these steps, while less sophisticated attackers looking for low hanging fruit will skip many of the steps.</p>
+    <h3>Step 1) Reconnaissance</h3>
+    <p>Adversaries will first scope out their target. This step involves finding hosts accessible from the Internet. The adversary’s goal at this stage is to find their targets and develop a plan of attack for those targets. This step can be thought of as a bank robber’s stage of “casing the joint”.</p>
+    <h3>Step 2) Scanning</h3>
+    <p>Once the adversary has chosen a target to exploit, they will inspect that target in more detail, looking for a way in. This is typically done via a process we call scanning. Most hosts are running software called services which are listening for instructions via network traffic. For example a web server will process requests sent by your web browser.</p>
+    <p>An adversary will then enumerate these services and look for ones which are running out of date versions containing unpatched vulnerabilities. This is where the adversary is hoping to meet characteristic #2: <b>Scanning and service enumeration is not detected or not acted upon.</b></p>
+    <h3>Step 3) Exploitation</h3>
+    <p>When an adversary has found their target, and determined that it is vulnerable to exploitation, they can exploit their target and gain access to the machine. This is where they meet characteristic #3 <b>An unpatched vulnerability is exploited.</b></p>
+    <p>The typical adversary is now in a position to execute their original goal. For example, this might be where they steal information from the target, vandalize a website, or destroy information in order to wreak havoc.</p>
+    <h3>Step 4) Persistence</h3>
+    <p>More sophisticated attackers will now attempt to establish persistence so that they can continue to achieve their goals inside your environment. This might involve pivoting to other hosts which they now have access to if the exploited host they is trusted by others. Most times they will create a backdoor allowing them to easily reconnect at a later time.</p>
+    <h3>Step 5) Covering Tracks</h3>
+    <p>More sophisticated attackers will also take steps to cover their tracks. They will remove their activity from logs, or plant information into those logs to send investigators down the wrong path, or even trick investigators into accepting false conclusions about what happened. The adversary’s goal here is to obfuscate their presence and activities.</p>
+    <h2>Building An Adequate Defense</h2>
+    <p>As you can see, steps 3-5 are where the real damage happens. Investing in detection and prevention mechanisms will stop most attackers in steps 1 and 2, and prevent costly headaches of a successful breach into your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you’re ready to take steps to reduce the cybersecurity risk in your organization.</p>
+  </div>)
+},
+{
   title: 'Security Awareness Training - Why You Need It',
   date: 'July 2019',
   author: 'Michael Wetherald',
@@ -26,7 +61,7 @@ export default [
     <p>If you think your users are security-conscious enough to not fall for a phishing attack, put them to the test with a simulated phishing attack. You may be surprised by how many of your employee’s fall prey to these simple attacks. Users who continually fail to recognize phishing attempts can be provided additional training, or have additional security controls put in place.</p>
     <h2>Take Steps To Protect Your Organization</h2>
     <p>Viam Technologies can help shift your staff away from being the biggest cybersecurity liability at your company, and into a vigilant force to defend against cybersecurity threats. We offer entertaining Security Awareness Training and simulated phishing attacks.</p>
-    <p>Regardless of the maturity of your cybersecurity program, Viam can help ensure you are taking the steps necessary to mitigate the cybersecurity risk you face. Contact us today for a free consultation.</p>
+    <p>Regardless of the maturity of your cybersecurity program, Viam can help ensure you are taking the steps necessary to mitigate the cybersecurity risk you face. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
   </div>)
 },
 {
