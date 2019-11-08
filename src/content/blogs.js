@@ -10,6 +10,61 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'What Makes a Good Password?',
+  date: 'October 2019',
+  author: 'Michael Wetherald',
+  snippet: 'What characterstics do you need in your passwords to make it difficult for criminals to defeat?',
+  path: '/blog/what-makes-passwords-good',
+  content: (<div>
+    <p>In our article <Link to='/blog/exploiting-passwords' onClick={jumpToTop}>“Poor Passwords Are Like No Passwords”</Link> we discuss common techniques criminals use to exploit poor passwords. With these techniques in mind, we can put together some guidelines for passwords which reduce the likelihood of criminals succeeding.</p>
+    <h2>Password Guidelines:</h2>
+    <ol>
+      <b><li>No Default Passwords</li></b>
+      <p>Even if you think it's random and secure don’t trust it. One of the first things criminals will do is look up default credentials for a device and attempt to log in.</p>
+      <b><li>Longer Than 12 Characters</li></b>
+      <p>Criminals can test passwords one after the other at incredibly high rates. High-end consumer GPUs can be used to test upwards of tens of billions of hashes per second. If the password is short, they can generate and test all possible combinations and test them in a very short period of time.</p>
+      <b><li>Randomly Generated</li></b>
+      <p>Password guessing and password spraying utilize commonly used and easy to generate passwords. Randomly generating passwords will significantly increase the number of attempts the criminal needs to make before finding a match.</p>
+      <b><li>Expiration Date</li></b>
+      <p>Criminals can often gain access to password hashes without being detected. This is where an expiration date is necessary. When a criminal is cracking hashes the only thing stopping them is the time necessary to find a match. Given enough complexity in the password we can extend the likelihood of them finding a match beyond the time password expires. In this case, when they come back to try to use the cracked password, the user has already moved on to a new one.</p>
+    </ol>
+    <h2>The Challenge</h2>
+    <p>A common reason organizations resist implementing a password policy with these kinds of requirements is the burden it places on the user. A good password is difficult if not impossible to remember. Fortunately there are a host of technical solutions for you to choose from:</p>
+    <ul>
+      <li>Cloud-based Password Managers</li>
+      <li>Local Password Managers</li>
+      <li>Biometric Devices</li>
+      <li>USB Devices</li>
+    </ul>
+    <h2>Defend Your Organization</h2>
+    <p>Viam is here to help you navigate these different solutions to determine what option is best for your organization. We can also help you formulate a password policy to ensure your organization isn't leaving any doors wide open for criminals to exploit. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you’re ready to take steps to reduce the cybersecurity risk in your organization.</p>
+  </div>)
+},
+{
+  title: 'Bad Passwords Are Like No Passwords',
+  date: 'September 2019',
+  author: 'Michael Wetherald',
+  snippet: 'Why would criminals bother exploiting your hosts if they can walk right in with a poor password?',
+  path: '/blog/exploiting-passwords',
+  content: (<div>
+    <p>Organizations spend a fortune on security solutions which help identify when a machine is being compromised. But why would criminals go through the trouble of exploiting a host and risk detection if they can walk right in with a poor password?</p>
+    <h2>How are passwords exploited?</h2>
+    <p>Let’s outline a few common ways passwords are exploited, and define characteristics which will make it more difficult for a criminal to exploit.</p>
+    <ol>
+      <b><li>Exploiting Default Credentials</li></b>
+      <p>One of the first things criminals will do is look up default credentials for a device and attempt to log in. I’ve personally run into a modem/router combination device from an ISP which had the default WiFi password set to the MAC address of the device. This MAC address is broadcast with every packet and can easily be picked up by packet capture devices. To the average person, the mac address seems like a random assortment of letters and numbers and they are fooled into trusting it as a secure password. Even if you think it’s random, change the default password to something you know is secure.</p>
+      <b><li>Password Guessing</li></b>
+      <p>Another way criminals can exploit passwords is by repeatedly attempting different passwords until one works. There are massive lists of the most commonly used passwords, and tools which will generate all possible combinations of valid characters which can be used to guess passwords.</p>
+      <p>This is commonly done on something called password hashes. Instead of storing passwords in plain text, appropriately engineered password management systems will store a hashed version of the password instead. There are many different types of hashing algorithms, but for our purposes we have a one-way hashing algorithm. Which means you take a password, pass it into an algorithm and out comes a new set of randomized characters which cannot be converted back into the original set of characters (hence one-way). If a criminal gains access to the database containing user credentials, they should only find these password hashes instead of your password.</p>
+      <p>The criminal can then use a password list, or password generating tool to test one password after the other at incredibly high rates a single high end consumer GPU can test upwards of tens of billions of hashes per second.</p>
+      <b><li>Password Spraying</li></b>
+      <p>If the criminal doesn’t have access to password hashes, another common technique is to do something called password spraying. This involves using a list of commonly used passwords against many different users. Many services will limit login attempts within a certain period of time, but only per user. Password spraying involves using those passwords against as many users as they can find until they match without ever tripping the failed attempt limit for any users.</p>
+    </ol>
+    <h2>Defend Your Organization</h2>
+    <p>In our article <Link to='/blog/what-makes-passwords-good' onClick={jumpToTop}>"What Makes a Good Password?"</Link> we discuss what characteristics compose a password that makes it difficult and unlikely for a criminal to defeat. Armed with this information you can intelligently develop a password policy that works for your organization. If the criminal can walk right in because you allow poor/default passwords in your environment, why wouldn’t they? <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you’re ready to take steps to reduce the cybersecurity risk in your organization.</p>
+  </div>)
+},
+{
   title: 'The Hacker Methodology - How Is It Done?',
   date: 'August 2019',
   author: 'Michael Wetherald',
