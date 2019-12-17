@@ -10,6 +10,64 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'Inventory and Management of Software Assets - Top 20 Security Controls',
+  date: 'December 2019',
+  author: 'Michael Wetherald',
+  snippet: 'Maintaining an up-to-date inventory of software assets is a crucial step in securing your organization. In this second article in our series on the top security controls...',
+  path: '/blog/top-20-software-inventory',
+  content: (<div>
+    <h2>Top 20 Critical Security Controls Series</h2>
+    <p>In this article, we continue our blog series on the industry standard top 20 critical security controls -- sometimes referred to as the SANS top 20 or CIS Critical Security Controls. These controls provide your organization a set of best practices for protecting your organization from the most common attacks faced around the world.</p>
+    <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">POSTER | SANS 20 CRITICAL SECURITY CONTROLS - DL &amp; Print crucial info for defending your org. <a href="http://t.co/MbpeDjiwRz">http://t.co/MbpeDjiwRz</a> <a href="http://t.co/nqWx9oRl5t">pic.twitter.com/nqWx9oRl5t</a></p>&mdash; SANS Institute (@SANSInstitute) <a href="https://twitter.com/SANSInstitute/status/617049110533775360?ref_src=twsrc%5Etfw">July 3, 2015</a></blockquote>
+    <h2>Basic Security Controls</h2>
+    <p>Controls 1-6 are considered the basic controls every organization should employ to have a solid foundation to build from:</p>
+      <ul>
+        <li><Link to="/blog/top-20-hardware-inventory" onClick={jumpToTop}>Inventory and Management of Hardware Assets</Link></li>
+        <li><b>Inventory and Management of Software Assets</b></li>
+        <li>Vulnerability Management</li>
+        <li>Controlled Use of Administrator Privileges</li>
+        <li>Secure Configuration for Hardware and Software</li>
+        <li>Maintenance, Monitoring and Analysis of Audit Logs</li>
+      </ul>
+    <h2>#2: Inventory and Management of Software Assets</h2>
+    <p>The software running on your hardware is what makes it vulnerable. If you want a completely secure computer, remove all of the software running. Obviously that is not a reasonable solution, but it illustrates where the problem truly lies. In order to secure your devices and protect your organization, you need to manage software that is allowed to run in your environment.</p>
+    <h2>Why is his control important?</h2>
+    <p>Without controlling the software is allowed to run in your environment, you create an environment where malware and vulnerable software can live and cause problems. Malware and viruses can be thought of as unauthorized software running on your devices. With proper control and inventory of software authorized to run in your organization, you can develop a strategy for ensuring that software is patched in a reasonable time frame, and unauthorized software is prevented from even getting 
+executed.</p>
+    <h2>How to Implement This Control</h2>
+    <p>The two main areas of focus for this control are inventory of authorized and installed software, and application whitelisting to detect and prevent unauthorized software.</p>
+    
+    <h3>Maintain Detailed Inventory of Authorized Software</h3>
+    <p>We first need a list of software which is authorized and necessary for business purposes on all business systems. When implementing security control #1 Inventory and Management of Hardware Assets, you have a created database of all business systems. When auditing these systems for the software which is installed on them, we will have a list of all software installed in the environment. We can then determine if that software is necessary for business purposes and include it in the authorized list.</p>
+
+    <h3>Ensure Authorized Software is Supported by Vendor</h3>
+    <p>All software contains security vulnerabilities, the cat and mouse game involves resolving those vulnerabilities before attackers can exploit them. If a piece of software is no longer supported, and therefore not receiving security patches, your system will remain vulnerable, waiting for the first attacker to come by and exploit it.</p>
+    <h3>Software Inventory Tools</h3>
+    <p>Use tools which will automatically audit the software (! including the operating system) installed and running on your business systems. Auditing each of your systems by hand would take far too long especially as software is constantly updated and conditions change. Your software inventory tool should log at least the following information into your software inventory:</p>
+    <ul>
+      <li>Name</li>
+      <li>Version</li>
+      <li>Publisher</li>
+      <li>Install Date</li>
+    </ul>
+    
+    <h3>Integrate Hardware and Software Inventories</h3>
+    <p>The hardware inventory generated via control #1 should be integrated with the software inventory you generate implementing this security control. This allows you to track all the necessary information in one place.</p>
+
+    <h3>Address Unauthorized Software</h3>
+    <p>When your automated software inventory tool finds unauthorized software installed on machines you need to have a procedure in place to address that software. Do you dispatch support staff to uninstall the software? Do you isolate the machine on the network? Does your staff need to be alerted immediately? Who is allowed to update the authorized software list? You need a plan to address this situation.</p>
+
+    <h3>Application Whitelisting</h3>
+    <p>Application whitelisting is a technology to implement on all business systems to prevent the execution of unauthorized software. Ensure that software library files (.dll, .ocx, .so, etc.) are whitelisted to ensure only authorized libraries are allowed to load into system processes. The same applies for scripts (.py, .js, macros, .ps1, etc.), which should be digitally signed to ensure integrity.</p>
+
+    <h3>Physically or Logically Segregate High Risk Software</h3>
+    <p>Some systems will  come with higher risk to your organization. The failure or compromise of those systems might be catastrophic to your organization. Isolate and control access to those systems more carefully to reduce the likelihood of a compromise.</p>
+
+    <h2>Conclusions</h2>
+    <p>Inventory and Management of Software Assets is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
+  </div>)
+},
+{
   title: 'Inventory and Management of Hardware Assets - Top 20 Security Controls',
   date: 'November 2019',
   author: 'Michael Wetherald',
@@ -23,7 +81,7 @@ export default [
     <p>Controls 1-6 are considered the basic controls every organization should employ to have a solid foundation to build from:</p>
       <ul>
         <li><b>Inventory and Management of Hardware Assets</b></li>
-        <li>Inventory and Management of Software Assets</li>
+        <li><Link to="/blog/top-20-software-inventory" onClick={jumpToTop}>Inventory and Management of Software Assets</Link></li>
         <li>Vulnerability Management</li>
         <li>Controlled Use of Administrator Privileges</li>
         <li>Secure Configuration for Hardware and Software</li>
@@ -57,7 +115,8 @@ export default [
     <h3>Address Unauthorized Assets</h3>
     <p>A crucial part of implementing this control involves developing policies and procedures for addressing assets in your environment which weren't previously authorized. How do you want to handle this situation in your environment? Do you allow bring your own device(BYOD)? When an unrecognized device connects to your network, who is responsible for what actions to address this?</p>
     <h2>Conclusions</h2>
-    <p>Inventory and Management of Hardware Assets is the first and probably most critical control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you’re ready to take steps to reduce the cybersecurity risk in your organization.</p>
+    <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-software-inventory" onClick={jumpToTop}>#2 Inventory and Management of Software Assets</Link></p>
+    <p>Inventory and Management of Software Assets is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you’re ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
 },
 {
@@ -88,7 +147,7 @@ export default [
       <li>USB Devices</li>
     </ul>
     <h2>Defend Your Organization</h2>
-    <p>Viam is here to help you navigate these different solutions to determine what option is best for your organization. We can also help you formulate a password policy to ensure your organization isn't leaving any doors wide open for criminals to exploit. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you’re ready to take steps to reduce the cybersecurity risk in your organization.</p>
+    <p>Viam is here to help you navigate these different solutions to determine what option is best for your organization. We can also help you formulate a password policy to ensure your organization isn't leaving any doors wide open for criminals to exploit. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
 },
 {
