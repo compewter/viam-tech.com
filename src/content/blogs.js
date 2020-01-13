@@ -10,6 +10,57 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'Vulnerability Management - Top 20 Security Controls',
+  date: 'January 2020',
+  author: 'Michael Wetherald',
+  snippet: 'Managing the vulnerabilities that exist in your environment is a crucial step in securing your organization. In this third article in our series on the top security controls...',
+  path: '/blog/top-20-vuln-management',
+  content: (<div>
+    <h2>Top 20 Critical Security Controls Series</h2>
+    <p>In this article, we continue our blog series on the industry standard top 20 critical security controls -- sometimes referred to as the SANS top 20 or CIS Critical Security Controls. These controls provide your organization a set of best practices for protecting your organization from the most common attacks faced around the world.</p>
+    <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">POSTER | SANS 20 CRITICAL SECURITY CONTROLS - DL &amp; Print crucial info for defending your org. <a href="http://t.co/MbpeDjiwRz">http://t.co/MbpeDjiwRz</a> <a href="http://t.co/nqWx9oRl5t">pic.twitter.com/nqWx9oRl5t</a></p>&mdash; SANS Institute (@SANSInstitute) <a href="https://twitter.com/SANSInstitute/status/617049110533775360?ref_src=twsrc%5Etfw">July 3, 2015</a></blockquote>
+    <h2>Basic Security Controls</h2>
+    <p>Controls 1-6 are considered the basic controls every organization should employ to have a solid foundation to build from:</p>
+      <ul>
+        <li><Link to="/blog/top-20-hardware-inventory" onClick={jumpToTop}>Inventory and Management of Hardware Assets</Link></li>
+        <li><Link to="/blog/top-20-software-inventory" onClick={jumpToTop}>Inventory and Management of Software Assets</Link></li>
+        <li><b>Vulnerability Management</b></li>
+        <li>Controlled Use of Administrator Privileges</li>
+        <li>Secure Configuration for Hardware and Software</li>
+        <li>Maintenance, Monitoring and Analysis of Audit Logs</li>
+      </ul>
+    <h2>#3: Vulnerability Management</h2>
+    <p>Vulnerabilities are the openings adversaries use to compromise your organization. It's important to implement a calculated strategy for mitigating the risk of any of those vulnerabilities being exploited.</p>
+
+    <h2>Why is his control important?</h2>
+    <p>Software is continuously updated to patch security vulnerabilities. Adversaries only need to exploit your systems between the announcement of a new exploit and before your organization has had a chance to install the updates which patch that exploit. The longer the time you wait to update systems, the wider the window of opportunity for attackers to compromise your systems. </p>
+
+    <h2>How to Implement This Control</h2>
+    <p>This control is comprised of methods for implementing an effective strategy to catch those vulnerabilities before your enemies do. This breaks down into two categories, vulnerability scanning and patch management.</p>
+    
+    <h2>Vulnerability Scanning</h2>
+    <p>Vulnerability scanning is the process we'll use to quickly find vulnerabilities in your environment before your adversaries do. Effectively implementing a vulnerability scanning program will involve a combination of tools, policies, and procedures.</p>
+
+    <h3>Automated Vulnerability Scanning Tools</h3>
+    <p>There are many tools which you can use to scan the systems on your network, looking for hosts which are running out of date software running known vulnerabilities. Run these scans at least weekly to find potential vulnerabilities early.</p>
+
+    <h3>Authenticated Vulnerability Scanning Tools</h3>
+    <p>Perform vulnerability scans with agents running on each of your machines, or by using remote scanning tools that can remotely authenticate with the hosts. Be sure to use a dedicated assessment account that is not used for any other administrative purposes in order to effectively monitor the proper use of those credentials.</p>
+    
+    <h3>Managing Vulnerability Scan Results</h3>
+    <p>When your vulnerability scans come in, make sure vulnerabilities are used in a risk-rating system to prioritize higher risk vulnerabilities for remediation. These results need to be tied in to procedures for your staff to remediate. Some companies find it worth integrating their scan results automatically with their IT ticketing system. Be sure to compare back-to-back vulnerability scans to verify that your patch management strategies are effectively patching vulnerabilities in a timely fashion.</p>
+
+    <h2>Patch Management</h2>
+    <p>The other half of this control involves quickly patching systems as updates become available. Expecting your users to patch their systems will not be a good strategy for timely remediation of vulnerabilities. Instead make sure you have a plan for determining when updates are available, and procedures in place to deploy those updates. Or ideally, use automated patch management tools.</p>
+
+    <h3>Automated Patch Management Tools</h3>
+    <p>Implement automated patch management tools in to quickly deploy patches for software as they come in. These tools should be used to automate patches for both operating systems, software (including third-party software) running on those hosts.</p>
+
+    <h2>Conclusions</h2>
+    <p>Vulnerability Managment is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
+  </div>)
+},
+{
   title: 'Inventory and Management of Software Assets - Top 20 Security Controls',
   date: 'December 2019',
   author: 'Michael Wetherald',
@@ -24,7 +75,7 @@ export default [
       <ul>
         <li><Link to="/blog/top-20-hardware-inventory" onClick={jumpToTop}>Inventory and Management of Hardware Assets</Link></li>
         <li><b>Inventory and Management of Software Assets</b></li>
-        <li>Vulnerability Management</li>
+        <li><Link to="/blog/top-20-vuln-management" onClick={jumpToTop}>Vulnerability Management</Link></li>
         <li>Controlled Use of Administrator Privileges</li>
         <li>Secure Configuration for Hardware and Software</li>
         <li>Maintenance, Monitoring and Analysis of Audit Logs</li>
@@ -61,9 +112,10 @@ executed.</p>
     <p>Application whitelisting is a technology to implement on all business systems to prevent the execution of unauthorized software. Ensure that software library files (.dll, .ocx, .so, etc.) are whitelisted to ensure only authorized libraries are allowed to load into system processes. The same applies for scripts (.py, .js, macros, .ps1, etc.), which should be digitally signed to ensure integrity.</p>
 
     <h3>Physically or Logically Segregate High Risk Software</h3>
-    <p>Some systems will  come with higher risk to your organization. The failure or compromise of those systems might be catastrophic to your organization. Isolate and control access to those systems more carefully to reduce the likelihood of a compromise.</p>
+    <p>Some systems will come with higher risk to your organization. The failure or compromise of those systems might be catastrophic to your organization. Isolate and control access to those systems more carefully to reduce the likelihood of a compromise.</p>
 
     <h2>Conclusions</h2>
+    <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-vuln-management" onClick={jumpToTop}>#3 Vulnerability Management</Link></p>
     <p>Inventory and Management of Software Assets is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
 },
@@ -82,7 +134,7 @@ executed.</p>
       <ul>
         <li><b>Inventory and Management of Hardware Assets</b></li>
         <li><Link to="/blog/top-20-software-inventory" onClick={jumpToTop}>Inventory and Management of Software Assets</Link></li>
-        <li>Vulnerability Management</li>
+        <li><Link to="/blog/top-20-vuln-management" onClick={jumpToTop}>Vulnerability Management</Link></li>
         <li>Controlled Use of Administrator Privileges</li>
         <li>Secure Configuration for Hardware and Software</li>
         <li>Maintenance, Monitoring and Analysis of Audit Logs</li>
