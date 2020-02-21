@@ -10,6 +10,61 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'Controlled Use of Admin Privileges - Top 20 Security Controls',
+  date: 'February 2020',
+  author: 'Michael Wetherald',
+  snippet: 'Admin privileges are the keys to your kingdom, insufficient protection increases the likelihood of a hacker using them against you. In this fourth article in our series on the top security controls...',
+  path: '/blog/top-20-admin-priv',
+  content: (<div>
+    <h2>Top 20 Critical Security Controls Series</h2>
+    <p>In this article, we continue our blog series on the industry standard top 20 critical security controls -- sometimes referred to as the SANS top 20 or CIS Critical Security Controls. These controls provide your organization a set of best practices for protecting your organization from the most common attacks faced around the world.</p>
+    <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">POSTER | SANS 20 CRITICAL SECURITY CONTROLS - DL &amp; Print crucial info for defending your org. <a href="http://t.co/MbpeDjiwRz">http://t.co/MbpeDjiwRz</a> <a href="http://t.co/nqWx9oRl5t">pic.twitter.com/nqWx9oRl5t</a></p>&mdash; SANS Institute (@SANSInstitute) <a href="https://twitter.com/SANSInstitute/status/617049110533775360?ref_src=twsrc%5Etfw">July 3, 2015</a></blockquote>
+    <h2>Basic Security Controls</h2>
+    <p>Controls 1-6 are considered the basic controls every organization should employ to have a solid foundation to build from:</p>
+      <ul>
+        <li><Link to="/blog/top-20-hardware-inventory" onClick={jumpToTop}>Inventory and Management of Hardware Assets</Link></li>
+        <li><Link to="/blog/top-20-software-inventory" onClick={jumpToTop}>Inventory and Management of Software Assets</Link></li>
+        <li><Link to="/blog/top-20-vuln-management" onClick={jumpToTop}>Vulnerability Management</Link></li>
+        <li><b>Controlled Use of Administrator Privileges</b></li>
+        <li>Secure Configuration for Hardware and Software</li>
+        <li>Maintenance, Monitoring and Analysis of Audit Logs</li>
+      </ul>
+    <h2>#4: Controlled Use of Administrator Privileges</h2>
+    <p>Administrator privileges are necessary for managing your environment, but in the hands of an adversary they are a free pass to wreak havoc in your environment. Getting the right balance of security and availability for those who need it requires a deliberate strategy.</p>
+
+    <h2>Why is his control important?</h2>
+    <p>Administrator privileges are the keys to your kingdom. Without the proper control and management of those keys, it becomes much easier for an attacker to gain access to those keys and cause damage to your organization. The challenge is balancing locking down and securing those keys, with your employees ability to perform their job responsibilities.</p>
+
+    <h2>How to Implement This Control</h2>
+    <p>This control breaks down into two main components. One is around updating the policies and procedures involving admin accounts. And the other is logging and monitoring the use of those admin accounts.</p>
+    
+    <h2>Administrator Account Management</h2>
+    <h3>Inventory of Aministrator Accounts</h3>
+    <p>Without an inventory of the administrator accounts in your environment they are unmanaged and free to change and be abused without notice. Utilize automated tools to audit the hosts in your environment for all administrator accounts on the device. Then audit this inventory to ensure only authorized users have elevated privileges necessary for their job responsibilities.</p>
+
+    <h3>Default Passwords</h3>
+    <p>Audit all devices in the environment for default passwords and change any that are found as soon as possible. Update your deployment procedures to ensure steps to reset default passwords.</p>
+
+    <h3>Utilize Dedicated Administrator Accounts</h3>
+    <p>All users who require administrator accounts should also be provided a user account without administrator privileges to use for typical day to day activities. Using admin accounts to browse the web or check email drastically increases the risk of those activities. A user using an admin account to open an adversary's email attachment has now provided that adversary admin access to the device.</p>
+    
+    <h3>Utilize Dedicated Adminstrator Devices</h3>
+    <p>Segregate the host(s) necessary for performing administrative responsibilities from the organizations primary network. There should be no Internet access from this host, and it should not be used for any other activity.</p>
+
+    <h3>Restrict Access to Scripting Languages</h3>
+    <p>Limit the use of scripting utilities like Powershell and Python to administrators or developers who require access for their job responsibilities. Without the use of scripts adversaries who compromise hosts will be severely restricted in their ability to advance.</p>
+
+    <h3>Multifactor Authentication and Unique Passwords</h3>
+    <p>Utilize multifactor authentication (MFA) for administrator accounts wherever possible. There are lots of different options for multifactor authentication, and choosing a solution that's right for your organization requires some careful planning. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today and we can work with you to understand your options. Wherever MFA isn't available, use admin passwords which are unique to each system. A good password management solution will make this feasible.</p>
+
+    <h2>Logging and Monitoring</h2>
+    <p>The other half of this control involves early detection and response to issues involving your adminstrator accounts. Configure the hosts in your environment to log changes to administrator groups. This includes when a user is added or removed from admin groups on the host. Additionally, log and alert on unsuccessful login attempts by admin users. Alerting on these two events will allow your staff quickly detect and react to compromised hosts.</p>
+
+    <h2>Conclusions</h2>
+    <p>Securing administrator privileges is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
+  </div>)
+},
+{
   title: 'Vulnerability Management - Top 20 Security Controls',
   date: 'January 2020',
   author: 'Michael Wetherald',
@@ -25,7 +80,7 @@ export default [
         <li><Link to="/blog/top-20-hardware-inventory" onClick={jumpToTop}>Inventory and Management of Hardware Assets</Link></li>
         <li><Link to="/blog/top-20-software-inventory" onClick={jumpToTop}>Inventory and Management of Software Assets</Link></li>
         <li><b>Vulnerability Management</b></li>
-        <li>Controlled Use of Administrator Privileges</li>
+        <li><Link to="/blog/top-20-admin-priv" onClick={jumpToTop}>Controlled Use of Administrator Privileges</Link></li>
         <li>Secure Configuration for Hardware and Software</li>
         <li>Maintenance, Monitoring and Analysis of Audit Logs</li>
       </ul>
@@ -57,6 +112,7 @@ export default [
     <p>Implement automated patch management tools in to quickly deploy patches for software as they come in. These tools should be used to automate patches for both operating systems, software (including third-party software) running on those hosts.</p>
 
     <h2>Conclusions</h2>
+    <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-admin-priv" onClick={jumpToTop}>#4: Controlled Use of Administrator Privileges</Link></p>
     <p>Vulnerability Managment is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
 },
@@ -76,7 +132,7 @@ export default [
         <li><Link to="/blog/top-20-hardware-inventory" onClick={jumpToTop}>Inventory and Management of Hardware Assets</Link></li>
         <li><b>Inventory and Management of Software Assets</b></li>
         <li><Link to="/blog/top-20-vuln-management" onClick={jumpToTop}>Vulnerability Management</Link></li>
-        <li>Controlled Use of Administrator Privileges</li>
+        <li><Link to="/blog/top-20-admin-priv" onClick={jumpToTop}>Controlled Use of Administrator Privileges</Link></li>
         <li>Secure Configuration for Hardware and Software</li>
         <li>Maintenance, Monitoring and Analysis of Audit Logs</li>
       </ul>
@@ -135,7 +191,7 @@ executed.</p>
         <li><b>Inventory and Management of Hardware Assets</b></li>
         <li><Link to="/blog/top-20-software-inventory" onClick={jumpToTop}>Inventory and Management of Software Assets</Link></li>
         <li><Link to="/blog/top-20-vuln-management" onClick={jumpToTop}>Vulnerability Management</Link></li>
-        <li>Controlled Use of Administrator Privileges</li>
+        <li><Link to="/blog/top-20-admin-priv" onClick={jumpToTop}>Controlled Use of Administrator Privileges</Link></li>
         <li>Secure Configuration for Hardware and Software</li>
         <li>Maintenance, Monitoring and Analysis of Audit Logs</li>
       </ul>
