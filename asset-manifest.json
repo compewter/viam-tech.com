@@ -1,18 +1,28 @@
 {
-  "main.css": "/static/css/main.c0029df4.chunk.css",
-  "main.js": "/static/js/main.c253255a.chunk.js",
-  "main.js.map": "/static/js/main.c253255a.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/css/2.0a1322f0.chunk.css": "/static/css/2.0a1322f0.chunk.css",
-  "static/js/2.344bb704.chunk.js": "/static/js/2.344bb704.chunk.js",
-  "static/js/2.344bb704.chunk.js.map": "/static/js/2.344bb704.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.56c547eab4a8bd89677a84f7779573d6.js": "/precache-manifest.56c547eab4a8bd89677a84f7779573d6.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/2.0a1322f0.chunk.css.map": "/static/css/2.0a1322f0.chunk.css.map",
-  "static/css/main.c0029df4.chunk.css.map": "/static/css/main.c0029df4.chunk.css.map",
-  "static/media/PlayfairDisplay-Black.ttf": "/static/media/PlayfairDisplay-Black.a20fb5c4.ttf",
-  "static/media/PlayfairDisplay-Bold.ttf": "/static/media/PlayfairDisplay-Bold.21988bd5.ttf",
-  "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff"
+  "files": {
+    "main.css": "/static/css/main.b39b5489.chunk.css",
+    "main.js": "/static/js/main.4399c13e.chunk.js",
+    "main.js.map": "/static/js/main.4399c13e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2e78362a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2e78362a.js.map",
+    "static/css/2.c0c1af7e.chunk.css": "/static/css/2.c0c1af7e.chunk.css",
+    "static/js/2.acde0273.chunk.js": "/static/js/2.acde0273.chunk.js",
+    "static/js/2.acde0273.chunk.js.map": "/static/js/2.acde0273.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.51836449ea4f8062028175ba64d8d54e.js": "/precache-manifest.51836449ea4f8062028175ba64d8d54e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.c0c1af7e.chunk.css.map": "/static/css/2.c0c1af7e.chunk.css.map",
+    "static/css/main.b39b5489.chunk.css.map": "/static/css/main.b39b5489.chunk.css.map",
+    "static/js/2.acde0273.chunk.js.LICENSE.txt": "/static/js/2.acde0273.chunk.js.LICENSE.txt",
+    "static/media/PlayfairDisplay-Black.ttf": "/static/media/PlayfairDisplay-Black.a20fb5c4.ttf",
+    "static/media/PlayfairDisplay-Bold.ttf": "/static/media/PlayfairDisplay-Bold.21988bd5.ttf",
+    "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e78362a.js",
+    "static/css/2.c0c1af7e.chunk.css",
+    "static/js/2.acde0273.chunk.js",
+    "static/css/main.b39b5489.chunk.css",
+    "static/js/main.4399c13e.chunk.js"
+  ]
 }
