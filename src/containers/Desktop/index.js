@@ -22,7 +22,10 @@ export default class DesktopContainer extends Component {
     const { fixed } = this.state
 
     return (
-      <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+      <Responsive
+        minWidth={Responsive.onlyTablet.minWidth}
+        style={{minHeight: '100vh', position: 'relative'}}
+      >
         <Visibility
           once={false}
           onBottomPassed={this.showFixedMenu}
@@ -56,7 +59,7 @@ export default class DesktopContainer extends Component {
               </Menu>
           }
         </Visibility>
-        <div style={{minHeight: window.innerHeight-250}}>
+        <div style={{minHeight: 500, paddingBottom: 250}}>
           {children}
         </div>
         <Footer />
