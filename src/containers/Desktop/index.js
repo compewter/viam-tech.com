@@ -59,7 +59,7 @@ export default class DesktopContainer extends Component {
               </Menu>
           }
         </Visibility>
-        <div style={{minHeight: 500, paddingBottom: 250}}>
+        <div style={{minHeight: 500, paddingBottom: 50}}>
           {children}
         </div>
         <Footer />
