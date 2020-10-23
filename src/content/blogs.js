@@ -10,6 +10,77 @@ function jumpToTop(){
 
 export default [
 {
+  title: 'Why Your Organization Needs Security Policies',
+  date: 'June 2020',
+  author: 'Michael Wetherald',
+  snippet: 'A well written security policy lets employees know what is and isn\'t allowed within your organization. Without clearly defined policies...',
+  path: '/blog/why-you-need-security-policies',
+  content: (<div>
+    <h2>What is a Security Policy?</h2>
+    <p>A security policy defines what is and is not to be done to protect your organization from cybersecurity threats. A well defined policy must be realistic in implemention and enforceable.</p>
+    <p>It is important to keep in mind that a security policy defines <i>what</i> is to be done, not <i>how</i>. The <i>how</i> is defined via procedures and are more likely to change as the environment or circumstances change.</p>
+    <h2>What are the Benefits of a Security Policy?</h2>
+    <p>A well written security policy lets employees know what is and isn't allowed within your organization. These policies should be measured and tailored to your organizations risk tolerance and prioritize protection against high impact cybersecurity risks.</p>
+    <p>A security policy gives your security staff the authority to act in ways which are necessary to protect the organization. Sometimes these decisions go against the desires of end users, and having a well defined and enforceable policy gives your staff the ability to act in a manner necessary to protect your organization.</p>
+    <h2>Aspects of a Security Policy</h2>
+    <p>Security policies are going to be unique to each organization, but including the following aspects is a good place to start.</p>
+    <p><b>Purpose:</b> What are the overarching goals/reasoning for the policy?</p>
+    <p><b>Scope:</b> Identify who or what are covered by this policy. Is it for everyone? Is it for a particular type of hosts?</p>
+    <p><b>Policy:</b> This is the actual statement of policy. What is to be done? What isn't allowed?</p>
+    <p><b>Actions:</b> Specify what actions are related to this policy, and when they are to be performed.</p>
+    <p><b>Penalties for Non-Compliance:</b> What happens when this policy is violated?</p>
+    <p><b>Responsibilities:</b> Who is responsible for the previously defined actions? Who is responsible for enforcing the policy?</p>
+    <h2>Example Security Policy</h2>
+    <p>Let's go through an example policy for a hypothetical customer.</p>
+    <p><b>Purpose:</b> The purpose of this policy is to limit the risk that comes with insecure passwords in the environment. Insecure passwords are low-hanging fruit for adversaries to cause damage to our organziation.</p>
+    <p><b>Scope:</b> This policies applies to all users, accounts, and hosts in the environment.</p>
+    <p><b>Policy:</b></p>
+    <ul>
+      <li>All default passwords must be changed before being deployed in the environment. </li>
+      <li>Passwords must not be reused.</li>
+      <li>All passwords must be greater than 12 characters long and randomly generated.</li>
+      <li>All passwords must expire no greater than 90 days after last update.</li>
+    </ul>
+    <p><b>Actions:</b></p>
+    <ul>
+      <li>Staff responsible for creating new accounts will use a randomly generated password.</li>
+      <li>All staff will update their password no greater than 90 days. </li>
+      <li>System administrators will update security configurations to ensure passwords expire after no greater than 90 days.</li>
+      <li>System administrators will ensure when deploying new services and hosts that they update any default passwords. </li>
+      <li>Security staff will frequently scan for default and insecure passwords on all systems and accounts.</li>
+      <li>Security staff will review all found insecure passwords to determine how they came to be before updating the passwords. Any indications of intentional circumvention will be reported to HR and the employee's manager for review.</li>
+    </ul>
+    <p><b>Penalties for Non-Compliance:</b> Typical violations of this policy are incidental and will be remediated by IT staff, however employees intentionally circumventing of any of these policies will be met with reprimands and in the event of repeated warnings and violations, may be met with termination.</p>
+    <p><b>Responsibilities: </b> System administrators are responsible for initial accounts and hosts configured with secure passwords and security policies requiring updates within 90 days. Security staff are responsible for scanning the environment for default and insecure passwords. Security staff are responsible for notifying HR and management in the event of intentional circumvention. HR staff will be responsible for reviewing cases of violations of this policy and determing whether warnings, reprimands, or termination are appropriate.</p>
+    <h2>What challenges come with implementing a security policy?</h2>
+    <p>There are several challenges which come with designing and implementing security policies in any organization. Initially you will need to accurately determine and caculate the inevitable tradeoffs that come with your security policy. Sometimes the cost of user productivity is not worth the benefit of implementing a security policy, and accurately reviewing your environment and determining those costs and benefits is key to implementing good policies. Once you have determined a policy which will have net positive tradeoffs, it is necessary to get both management and user buy-in.</p>
+    <p>Management should be sold on the financial reasoning for implementing the policy. Emphasize the costs of security events which this policy intends to reduce risk of. Management must help shift the culture of security in your environment, and if you have their support you will have the momentum necessary to make company-wide shifts toward greater security.</p>
+    <p>End users should be informed of the reasoning for the policies and when selling the policy to them, the emphasis should be on how the policy benefits them, for example through added protection or improved productivity. Sometimes it's inevitable that a security policy negatively impacts users. It's important to emphasize the need for the security policy, and to have management buy in to help shift the culture around complying with the new policy.</p>
+    <p>If your organization would like assistance in determining what security policies make sense for you <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
+  </div>)
+},
+{
+  title: 'What Is Security Information And Event Managment (SIEM)?',
+  date: 'May 2020',
+  author: 'Michael Wetherald',
+  snippet: 'SIEM is a powerful tool to analyze large volumes of logs for security events and for generating automated alerts. Without a SIEM...',
+  path: '/blog/security-information-event-management-siem',
+  content: (<div>
+    <h2>What is SIEM?</h2>
+    <p>The purpose of Security Information and Event Management (SIEM) is to aggregate relevant security data from all available sources in order to quickly identify security events. </p>
+    <h2>What are the benefits of a SIEM?</h2>
+    <p>As your organization matures and begins to generate logs necessary to identify security issues, you will quickly run into the problem of having more logs than you can manually review. Two solutions for this problem are to either reduce the amount of logs generated to that which can be reviewed, or implement a SIEM which can intelligently analyze the fire hose of logs and generate a manageable amount of events to review manually.</p>
+    <h2>What are the challenges involved with implementing a SIEM?</h2>
+    <p>A common challenge with implementing security tools is reducing noise. Many out of the box configurations will begin alerting false positives. After enough of these alerts, whoever receives them will become accustomed to ignoring alerts which increases the risk of an actual security event not being addressed quickly.</p>
+    <p>The SIEM should be regularly adjusted to reduce noise, and more accurately identify security events which need review. But always remember the SIEM will miss information on its own, it's role is to assist your analysts in detecting actionable events.</p>
+    <h2>What SIEM solution is right for you?</h2>
+    <p>In addition to the time requirement of regularly tuning alerts, dedicating analysts to reviewing alerts and logs, SIEMs are often cost prohibitive for small businesses. If you have the manpower there are many fantastic enterprise grade tools available including Splunk, LogRhythm, SolarWinds Security Event Manager. SMBs also have the option of hiring MSSPs with trained staff who will review events, tune alerts, and reduce noise so your staff only needs to react to events which require action.</p>
+    <h2>Conclusion</h2>
+    <p>Logs contain the footsteps of hidden enemies working to compromise your environment. If these logs aren't deliberately generated and reviewed, you will be unaware when your prevention systems fail and your environment is compromised. Implementing a Security Information and Event Management (SIEM) is a great way to handle a large volume of logs being generated and set up automated alerts when those security incidents arise.</p>
+    <p>If your organization is read to implement a SIEM we’re here to help. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
+  </div>)
+},
+{
   title: 'Maintenance, Monitoring and Analysis of Audit Logs - Top 20 Security Controls',
   date: 'April 2020',
   author: 'Michael Wetherald',
@@ -32,7 +103,7 @@ export default [
     <h2>#6: Maintenance, Monitoring and Analysis of Audit Logs</h2>
     <p>Logs contain the footsteps of hidden enemies working to compromise your environment. If these logs aren't deliberately generated and reviewed, you will be unaware when your prevention systems fail and your environment is compromised.</p>
 
-    <h2>Why is his control important?</h2>
+    <h2>Why Is This Control Important?</h2>
     <p>Adequate logging practices are crucial for identifying the identification, comprehension, and recovery from a security incident. A successful incident response involves understanding how the incident happened, and what actions were taken. Without this information you cannot effectively implement measures to prevent it from happening again, or mitigate the damage that was done.  Adequate logging will provide your incident response team with the information necessary to confidently determine what happened, how to stop further damage, and take step to prevent it from happening again.</p>
 
     <h2>How to Implement This Control</h2>
@@ -87,7 +158,7 @@ export default [
     <h2>#5: Secure Configurations</h2>
     <p>It is very common for default configurations of hardware and software to be designed to make it quick and easy for you to get the hardware or software working. This often comes at the expense of security. You cannot reasonably expect your users to go through the hundreds or even thousands of configuration options picking those that will provide the optimal level of functionality and security. So you need procedures for establishing and maintaining secure configurations in your environment.</p>
 
-    <h2>Why is his control important?</h2>
+    <h2>Why Is This Control Important?</h2>
     <p>You might be tempted to think "all of my software is up to date, so it's secure". But even software configured in an insecure manner will be vulnerable to exploitation regardless of which version of it is running. Without a system for managing secure configurations, you increase the likelihood of insecure configurations existing in your environment.</p>
 
     <h2>How to Implement This Control</h2>
@@ -133,7 +204,7 @@ export default [
     <h2>#4: Controlled Use of Administrator Privileges</h2>
     <p>Administrator privileges are necessary for managing your environment, but in the hands of an adversary they are a free pass to wreak havoc in your environment. Getting the right balance of security and availability for those who need it requires a deliberate strategy.</p>
 
-    <h2>Why is his control important?</h2>
+    <h2>Why Is This Control Important?</h2>
     <p>Administrator privileges are the keys to your kingdom. Without the proper control and management of those keys, it becomes much easier for an attacker to gain access to those keys and cause damage to your organization. The challenge is balancing locking down and securing those keys, with your employees ability to perform their job responsibilities.</p>
 
     <h2>How to Implement This Control</h2>
@@ -189,7 +260,7 @@ export default [
     <h2>#3: Vulnerability Management</h2>
     <p>Vulnerabilities are the openings adversaries use to compromise your organization. It's important to implement a calculated strategy for mitigating the risk of any of those vulnerabilities being exploited.</p>
 
-    <h2>Why is his control important?</h2>
+    <h2>Why Is This Control Important?</h2>
     <p>Software is continuously updated to patch security vulnerabilities. Adversaries only need to exploit your systems between the announcement of a new exploit and before your organization has had a chance to install the updates which patch that exploit. The longer the time you wait to update systems, the wider the window of opportunity for attackers to compromise your systems. </p>
 
     <h2>How to Implement This Control</h2>
@@ -240,7 +311,7 @@ export default [
       </ul>
     <h2>#2: Inventory and Management of Software Assets</h2>
     <p>The software running on your hardware is what makes it vulnerable. If you want a completely secure computer, remove all of the software running. Obviously that is not a reasonable solution, but it illustrates where the problem truly lies. In order to secure your devices and protect your organization, you need to manage software that is allowed to run in your environment.</p>
-    <h2>Why is his control important?</h2>
+    <h2>Why Is This Control Important?</h2>
     <p>Without controlling the software is allowed to run in your environment, you create an environment where malware and vulnerable software can live and cause problems. Malware and viruses can be thought of as unauthorized software running on your devices. With proper control and inventory of software authorized to run in your organization, you can develop a strategy for ensuring that software is patched in a reasonable time frame, and unauthorized software is prevented from even getting 
 executed.</p>
     <h2>How to Implement This Control</h2>
@@ -299,7 +370,7 @@ executed.</p>
       </ul>
     <h2>#1: Inventory and Management of Hardware Assets</h2>
     <p>This control is a critical first step for securing your organization. You must identify all of the assets in use by your organization, regardless of whether they are currently connected to your network. All hardware assets which have the ability to store, access, or process data pertaining your business need to be considered when implementing the remaining security controls, and this is only possible with an accurate and up to date inventory of hardware assets.</p>
-    <h2>Why is his control important?</h2>
+    <h2>Why Is This Control Important?</h2>
     <p>How can you protect your environment if you don’t know what devices are in it? Even if you pull a list of devices which are on your secure network, without some type of inventory how do you know which devices are authorized? Which assets contain the most sensitive information? Which assets must remain active for your business to continue being operational? All of these questions are critical for developing a security program and can only be done with an accurate and up to date inventory of hardware assets.</p>
     <h2>How to Implement This Control</h2>
     <p>This control boils down to maintaining some sort of inventory list of all of your hardware assets. If you are a small team, this might just be a spreadsheet. Organizations with more than a handful of assets should use IT Asset Management software which can meet the requirements outlined as follows:</p>
