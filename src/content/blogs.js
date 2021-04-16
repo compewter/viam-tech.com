@@ -9,9 +9,9 @@ function jumpToTop(){
 }
 
 export default [
-{
+/*{
   title: 'Why Your Organization Needs Security Policies',
-  date: 'June 2020',
+  date: 'February 2022',
   author: 'Michael Wetherald',
   snippet: 'A well written security policy lets employees know what is and isn\'t allowed within your organization. Without clearly defined policies...',
   path: '/blog/why-you-need-security-policies',
@@ -58,10 +58,10 @@ export default [
     <p>End users should be informed of the reasoning for the policies and when selling the policy to them, the emphasis should be on how the policy benefits them, for example through added protection or improved productivity. Sometimes it's inevitable that a security policy negatively impacts users. It's important to emphasize the need for the security policy, and to have management buy in to help shift the culture around complying with the new policy.</p>
     <p>If your organization would like assistance in determining what security policies make sense for you <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
   </div>)
-},
-{
+},*/
+/*{
   title: 'What Is Security Information And Event Managment (SIEM)?',
-  date: 'May 2020',
+  date: 'December 2021',
   author: 'Michael Wetherald',
   snippet: 'SIEM is a powerful tool to analyze large volumes of logs for security events and for generating automated alerts. Without a SIEM...',
   path: '/blog/security-information-event-management-siem',
@@ -79,10 +79,10 @@ export default [
     <p>Logs contain the footsteps of hidden enemies working to compromise your environment. If these logs aren't deliberately generated and reviewed, you will be unaware when your prevention systems fail and your environment is compromised. Implementing a Security Information and Event Management (SIEM) is a great way to handle a large volume of logs being generated and set up automated alerts when those security incidents arise.</p>
     <p>If your organization is read to implement a SIEM we’re here to help. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
   </div>)
-},
-{
+},*/
+/*{
   title: 'Maintenance, Monitoring and Analysis of Audit Logs - Top 20 Security Controls',
-  date: 'April 2020',
+  date: 'October 2021',
   author: 'Michael Wetherald',
   snippet: 'Logs contain the footsteps of hidden enemies working to compromise your environment. In this sixth article in our series on the top security controls...',
   path: '/blog/top-20-audit-logs',
@@ -131,13 +131,12 @@ export default [
     <p>Implementing a Security Information and Event Management (SIEM) is a great addition to your log analysis strategy. The SIEM should be regularly adjusted to reduce noise, and more accurately identify security events which need review. But always remember the SIEM will miss information on its own, it's role is to assist your analysts in detecting actionable events.</p>
 
     <h2>Conclusion</h2>
-    {/*<p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-audit-logs" onClick={jumpToTop}>#6: Maintenance, Monitoring and Analysis of Audit Logs</Link></p>*/}
     <p>Establishing and maintaining adequate logging in your environment is a critical step in reducing cybersecurity risk facing your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
-},
-{
+},*/
+/*{
   title: 'Secure Configurations - Top 20 Security Controls',
-  date: 'March 2020',
+  date: 'August 2021',
   author: 'Michael Wetherald',
   snippet: 'It only takes one misconfigured host for an attacker to gain access to your environment. Implementing a strategy for securely configuring the hosts in your environment is critical to protecting your organization. In this fifth article in our series on the top security controls...',
   path: '/blog/top-20-secure-configs',
@@ -180,10 +179,10 @@ export default [
     <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-audit-logs" onClick={jumpToTop}>#6: Maintenance, Monitoring and Analysis of Audit Logs</Link></p>
     <p>Establishing and maintaining secure configurations for the hosts in your environment is a critical step in reducing cybersecurity risk facing your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
-},
-{
+},*/
+/*{
   title: 'Controlled Use of Admin Privileges - Top 20 Security Controls',
-  date: 'February 2020',
+  date: 'June 2021',
   author: 'Michael Wetherald',
   snippet: 'Admin privileges are the keys to your kingdom, insufficient protection increases the likelihood of a hacker using them against you. In this fourth article in our series on the top security controls...',
   path: '/blog/top-20-admin-priv',
@@ -236,10 +235,10 @@ export default [
     <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-secure-configs" onClick={jumpToTop}>#5: Secure Configurations</Link></p>
     <p>Securing administrator privileges is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
-},
+},*/
 {
   title: 'Vulnerability Management - Top 20 Security Controls',
-  date: 'January 2020',
+  date: 'April 2021',
   author: 'Michael Wetherald',
   snippet: 'Managing the vulnerabilities that exist in your environment is a crucial step in securing your organization. In this third article in our series on the top security controls...',
   path: '/blog/top-20-vuln-management',
@@ -291,7 +290,7 @@ export default [
 },
 {
   title: 'Inventory and Management of Software Assets - Top 20 Security Controls',
-  date: 'December 2019',
+  date: 'February 2021',
   author: 'Michael Wetherald',
   snippet: 'Maintaining an up-to-date inventory of software assets is a crucial step in securing your organization. In this second article in our series on the top security controls...',
   path: '/blog/top-20-software-inventory',
@@ -350,7 +349,7 @@ executed.</p>
 },
 {
   title: 'Inventory and Management of Hardware Assets - Top 20 Security Controls',
-  date: 'November 2019',
+  date: 'December 2020',
   author: 'Michael Wetherald',
   snippet: 'Maintaining an up-to-date inventory of hardware assets is a crucial first step in securing your organization. In this first article in our series on the top security controls...',
   path: '/blog/top-20-hardware-inventory',
@@ -402,7 +401,7 @@ executed.</p>
 },
 {
   title: 'What Makes a Good Password?',
-  date: 'October 2019',
+  date: 'October 2020',
   author: 'Michael Wetherald',
   snippet: 'What characterstics do you need in your passwords to make it difficult for criminals to defeat?',
   path: '/blog/what-makes-passwords-good',
@@ -433,7 +432,7 @@ executed.</p>
 },
 {
   title: 'Bad Passwords Are Like No Passwords',
-  date: 'September 2019',
+  date: 'August 2020',
   author: 'Michael Wetherald',
   snippet: 'Why would criminals bother exploiting your hosts if they can walk right in with a poor password?',
   path: '/blog/exploiting-passwords',
@@ -457,7 +456,7 @@ executed.</p>
 },
 {
   title: 'The Hacker Methodology - How Is It Done?',
-  date: 'August 2019',
+  date: 'June 2020',
   author: 'Michael Wetherald',
   snippet: 'Most successful breaches are executed by adversaries following a similar methodology. Understanding that methodology is key to a successful defense.',
   path: '/blog/hacker-methodology',
@@ -492,7 +491,7 @@ executed.</p>
 },
 {
   title: 'Security Awareness Training - Why You Need It',
-  date: 'July 2019',
+  date: 'April 2020',
   author: 'Michael Wetherald',
   snippet: 'A staggering 90% of successful network breaches are caused by user error. Have you done enough to mitigate this risk at your organization?',
   path: '/blog/security-awareness-training',
@@ -512,7 +511,7 @@ executed.</p>
 },
 {
   title: 'Preventive Security Is Not Enough',
-  date: 'June 2019',
+  date: 'February 2020',
   author: 'Michael Wetherald',
   snippet: 'Preventive security solutions like, anti-virus and firewalls are not enough. Without detection, you won\'t know how or when your security controls are failing...',
   path: '/blog/preventive-security-not-enough',
@@ -531,7 +530,7 @@ executed.</p>
 },
 {
   title: 'What is Phishing?',
-  date: 'May 2019',
+  date: 'December 2019',
   author: 'Michael Wetherald',
   snippet: 'Phishing is widely considered the largest threat to companies in 2019. What is it? And how can we mitigate the risk...',
   path: '/blog/what-is-phishing',
@@ -556,7 +555,7 @@ executed.</p>
 },
 {
   title: 'Securing Your Company From Hackers - Where to Start?',
-  date: 'April 2019',
+  date: 'October 2019',
   author: 'Michael Wetherald',
   snippet: 'Cut through the endless amount of information and snake oil and read how you can prioritize where to start securing your organization from...',
   path: '/blog/where-to-start',
@@ -584,7 +583,7 @@ executed.</p>
 },
 {
   title: 'Lessons From Major Security Breaches',
-  date: 'March 2019',
+  date: 'August 2019',
   author: 'Michael Wetherald',
   snippet: 'Carefully analyzing major security breaches provides insight on where things commonly go wrong. These three factors are always present...',
   path: '/blog/lessons-learned-security-breaches',
@@ -633,7 +632,7 @@ executed.</p>
 },
 {
   title: 'Hacking Explained: Advanced Phishing Attacks and Defense',
-  date: 'February 2019',
+  date: 'June 2019',
   author: 'Michael Wetherald',
   snippet: 'A new phishing tool was released which allows hackers to monitor victims as they shop or send emails. Here\'s how it works, and how you can protect users who visit your...',
   path: '/blog/hacking-explained-advanced-phishing-attacks-defense',
@@ -702,7 +701,7 @@ executed.</p>
   </div>)
 },{
   title: 'Protect Your Organization With A Security Risk Assessment',
-  date: 'January 2019',
+  date: 'April 2019',
   author: 'Michael Wetherald',
   snippet: 'A security risk assessment is a crucial step for mitigating the cyber security risks in your organization. Without identifying and addressing the risks in your environment, you have no chance to prevent a catastrophic...',
   path: '/blog/protect-your-org-risk-assessment',
@@ -726,18 +725,9 @@ executed.</p>
     <p>Risk is an inherent part of any operation. As the leader of your organization, it is your responsibility to recognize where the risks to the organization lie and to mitigate those risks. Fortunately, most adversaries look for low hanging fruit. A risk assessment can determine where your organization is exposing low hanging fruit to these criminals, a first step toward mitigating the risk of a security incident.</p>
     <p>If your organization would benefit from a risk assessment we’re here to help. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
   </div>)
-},/*{
-  title: 'Hacking Explained: Man In The Middle Attacks',
-  date: 'January 2019',
-  author: 'Jose Barrientos',
-  snippet: 'You may have heard that using public WiFi is dangerous. Security Engineer and Co-Founder Jose Barrientos explains how criminals can exploit victims...',
-  path: '/blog/hacking-explained-man-in-the-middle',
-  content: (<div>
-
-  </div>)
-},*/{
+},{
   title: 'Hacking Explained: URL Spoofing Trick',
-  date: 'December 2018',
+  date: 'February 2019',
   author: 'Michael Wetherald',
   snippet: 'This simple but effective URL spoofing trick can fool even the most security conscious users into believing they are on a legitimate webiste...',
   path: '/blog/hacking-explained-url-spoofing-trick',
@@ -758,7 +748,7 @@ executed.</p>
   </div>)
 },{
   title: 'Hacking Explained: DNS Spoofing',
-  date: 'November 2018',
+  date: 'December 2018',
   author: 'Michael Wetherald',
   snippet: 'What is DNS and DNS Spoofing? Security Engineer and Co-Founder Michael Wetherald gives a basic explanation of DNS and how it can be spoofed in order to...',
   path: '/blog/hacking-explained-dns-spoofing',
