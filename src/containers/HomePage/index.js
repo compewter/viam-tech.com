@@ -42,23 +42,6 @@ const HomepageLayout = ({ activePage }) => (
       <meta name="description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
       <meta name="og:description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
     </Helmet>
-    <Segment style={{ padding: '8em 0em', backgroundColor:'#f9f9f9' }} vertical>
-      <Grid container stackable verticalAlign='middle'>
-        <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              Manage Cyber Security Risk
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Get a clear understanding of the risks facing your organization and recommendations for addressing those risks
-            </p>
-          </Grid.Column>
-          <Grid.Column floated='right' width={8}>
-            <Image bordered rounded size='big' src='/images/services/risk.jpeg' />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
 
     <Segment style={{ padding: '0em', backgroundColor: 'white' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
@@ -91,22 +74,86 @@ const HomepageLayout = ({ activePage }) => (
     </Segment>
 
     {/*Service Section*/}
-    <Segment style={{ padding: '6em 2em', backgroundColor:'#f9f9f9'}} vertical textAlign='center'>
-      <Responsive minWidth={Responsive.onlyMobile.maxWidth}>
-        <Header as='h2' className='section-header' style={{fontSize: '4em', marginBottom: 30}}>Services</Header>
-        <Card.Group itemsPerRow={3} centered style={{margin: '25px auto', maxWidth: 1200}}>
-          {services.map((service, ind) => <ServiceCard service={service} key={`service_${ind}`} mobile={false} /> )}
-        </Card.Group>
-      </Responsive>
-      <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
-        <Header as='h2' className='section-header' style={{fontSize: '3em', marginBottom: 30}}>Services</Header>
-        <Card.Group itemsPerRow={1} centered style={{margin: '25px auto'}}>
-          {services.map((service, ind) => <ServiceCard service={service} key={`service_${ind}`} mobile={true} /> )}
-        </Card.Group>
-      </Responsive>
+    <Segment style={{ padding: '6em 4em', backgroundColor:'#202020', color: 'white'}} vertical textAlign='center'>
+      <Header as='h2' style={{fontSize: '2em', marginBottom: 80, color: 'white'}}>Test Your Security With Penetration Tests and Red Team Operations</Header>
+      <Grid relaxed stackable verticalAlign='top' text style={{ fontSize: '1.33em', textAlign: 'left', color: 'white' }}>
+        <Grid.Row>
+          <Grid.Column width={4}>
+            <Grid.Row>
+              <Image style={{maxHeight: 310, marginBottom: 40}} bordered rounded size='big' src='/images/services/risk.jpeg' />
+            </Grid.Row>
+            <Grid.Column width={8}>
+              <Header as='h3' style={{ color: 'white' }}>
+                Validate Preventive Measures
+              </Header>
+              <p>
+                You have invested in many preventive measures to protect your organization. Penetration tests and red team assessments will put those measures to the test to ensure they are working as intended.
+              </p>
+            </Grid.Column>
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Grid.Row>
+              <Image style={{maxHeight: 310, marginBottom: 40}} bordered rounded size='big' src='/images/services/shell-ls.jpeg' />
+            </Grid.Row>
+            <Grid.Column width={8}>
+              <Header as='h3' style={{ color: 'white' }}>
+                Identify Vulnerabilities
+              </Header>
+              <p>
+                Vulnerabilities are the openings adversaries use to compromise your organization. Penetration tests and red team assessments will identify some of the highest risk vulnerabilites in your environment before they can be exploited by criminals.
+              </p>
+            </Grid.Column>
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Grid.Row>
+              <Image style={{maxHeight: 310, marginBottom: 40}} bordered rounded size='big' src='/images/services/monitoring.jpeg' />
+            </Grid.Row>
+            <Grid.Column width={8}>
+              <Header as='h3' style={{ color: 'white' }}>
+                Evaluate Incident Response
+              </Header>
+              <p>
+                How prepared is your incident response team to detect and respond to a security breach? A red team assessment will test your blue team's intrusion detection and response to security breaches.
+              </p>
+            </Grid.Column>
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Grid.Row>
+              <Image style={{maxHeight: 310, marginBottom: 40}} bordered rounded size='big' src='/images/services/hand-keyboard.jpeg' />
+            </Grid.Row>
+            <Grid.Column width={8}>
+              <Header as='h3' style={{ color: 'white' }}>
+                Assess Breach Impact
+              </Header>
+              <p>
+                A red team assessment will provide you a realistic scenario to determine the impact a security breach could have on your organization.
+              </p>
+            </Grid.Column>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     </Segment>
 
-    <Segment style={{ padding: '6em 0em', backgroundColor: 'white' }} vertical>
+{/*
+    <Segment style={{ padding: '8em 0em', backgroundColor:'#f9f9f9' }} vertical>
+      <Grid container stackable verticalAlign='middle'>
+        <Grid.Row>
+          <Grid.Column width={8}>
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              Manage Cyber Security Risk
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+              Get a clear understanding of the risks facing your organization and recommendations for addressing those risks
+            </p>
+          </Grid.Column>
+          <Grid.Column floated='right' width={8}>
+            <Image bordered rounded size='big' src='/images/services/risk.jpeg' />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>*/}
+
+    <Segment style={{ padding: '6em 0em', backgroundColor: '#f9f9f9' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
           Securing Your Organization - Where to Start?
@@ -137,7 +184,7 @@ const HomepageLayout = ({ activePage }) => (
       </Container>
     </Segment>
 
-    <Segment id='contact' style={{ padding: '6em 0em', backgroundColor: '#f9f9f9' }} vertical>
+    <Segment id='contact' style={{ padding: '6em 0em', backgroundColor: 'white' }} vertical>
       <ContactForm />
     </Segment>
   </ResponsiveContainer>

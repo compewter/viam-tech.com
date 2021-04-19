@@ -4,6 +4,11 @@
   z-index: 9999;
 }
 
+.item {
+  color: white !important;
+  font-size: 1.2em !important;
+}
+
 .calc-header-menu {
   -webkit-filter: none !important;
   -moz-filter: none !important;

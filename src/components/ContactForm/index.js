@@ -71,7 +71,7 @@ class ContactForm extends Component {
           this.setState({
             loading: false,
             error: {
-              field: response.error.slice(0,response.error.indexOf(':')),
+              field: response.error.slice(response.error.indexOf('.')+1, response.error.indexOf(' ')),
               header: 'Error in form',
               content: 'Please check the highlighted field'
             }

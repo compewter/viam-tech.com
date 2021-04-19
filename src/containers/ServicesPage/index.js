@@ -33,9 +33,10 @@ const ServicesPage = ({activePage}) => (
       <meta name="description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
       <meta name="og:description" content="When criminals compromise your organization will you know? Viam Technologies provides a range of cyber security services. Contact us today to be prepared." />
     </Helmet>
-    <Segment style={{ padding: '6em 2em', backgroundColor: 'white'}} vertical textAlign='center'>
+    <Segment style={{ padding: '6em 2em', backgroundColor: '#eaeaea'}} vertical textAlign='center'>
       <Responsive minWidth={Responsive.onlyMobile.maxWidth}>
-        <Header as='h2' className='section-header' style={{fontSize: '4em', marginBottom: 30}}>Services</Header>
+        <Header as='h2' style={{fontSize: '4em', marginBottom: 30}}>Services</Header>
+        <Header as='h3' style={{fontSize: '1.5em', margin: '0 auto 15px auto', maxWidth: 800}}>Test your security posture to find security holes before criminals can exploit them.</Header>
         <Card.Group itemsPerRow={3} centered style={{margin: '25px auto', maxWidth: 1200}}>
           {services.map((service, ind) => <ServiceCard service={service} key={`service_${ind}`} mobile={false} /> )}
         </Card.Group>

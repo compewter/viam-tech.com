@@ -48,6 +48,7 @@ export default class DesktopContainer extends Component {
                 pointing={!fixed}
                 secondary={!fixed}
                 size='large'
+                style={{backgroundColor: 'black', padding: '5px'}}
               >
                 <Link to='/'><Image src="/images/logo/logo-header-desktop.png" className='header-menu-logo-desktop' alt='logo'/></Link>
                 <Container>
@@ -59,7 +60,7 @@ export default class DesktopContainer extends Component {
               </Menu>
           }
         </Visibility>
-        <div style={{minHeight: 500, paddingBottom: 50}}>
+        <div style={{minHeight: 1000}}>
           {children}
         </div>
         <Footer />
