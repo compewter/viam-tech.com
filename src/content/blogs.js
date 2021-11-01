@@ -80,7 +80,7 @@ export default [
     <p>If your organization is read to implement a SIEM we’re here to help. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
   </div>)
 },*/
-/*{
+{
   title: 'Maintenance, Monitoring and Analysis of Audit Logs - Top 20 Security Controls',
   date: 'October 2021',
   author: 'Michael Wetherald',
@@ -100,7 +100,7 @@ export default [
         <li><Link to="/blog/top-20-secure-configs" onClick={jumpToTop}>Secure Configuration for Hardware and Software</Link></li>
         <li><b>Maintenance, Monitoring and Analysis of Audit Logs</b></li>
       </ul>
-    <h2>#6: Maintenance, Monitoring and Analysis of Audit Logs</h2>
+    <h2>#6: Maintenance, Monitoring and Analysis of Audit Logs</h2>
     <p>Logs contain the footsteps of hidden enemies working to compromise your environment. If these logs aren't deliberately generated and reviewed, you will be unaware when your prevention systems fail and your environment is compromised.</p>
 
     <h2>Why Is This Control Important?</h2>
@@ -131,10 +131,10 @@ export default [
     <p>Implementing a Security Information and Event Management (SIEM) is a great addition to your log analysis strategy. The SIEM should be regularly adjusted to reduce noise, and more accurately identify security events which need review. But always remember the SIEM will miss information on its own, it's role is to assist your analysts in detecting actionable events.</p>
 
     <h2>Conclusion</h2>
-    <p>Establishing and maintaining adequate logging in your environment is a critical step in reducing cybersecurity risk facing your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
+    <p>Establishing and maintaining adequate logging in your environment is a critical step in reducing cybersecurity risk facing your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
-},*/
-/*{
+},
+{
   title: 'Secure Configurations - Top 20 Security Controls',
   date: 'August 2021',
   author: 'Michael Wetherald',
@@ -154,33 +154,33 @@ export default [
         <li><b>Secure Configuration for Hardware and Software</b></li>
         <li><Link to="/blog/top-20-audit-logs" onClick={jumpToTop}>Maintenance, Monitoring and Analysis of Audit Logs</Link></li>
       </ul>
-    <h2>#5: Secure Configurations</h2>
+    <h2>#5: Secure Configurations</h2>
     <p>It is very common for default configurations of hardware and software to be designed to make it quick and easy for you to get the hardware or software working. This often comes at the expense of security. You cannot reasonably expect your users to go through the hundreds or even thousands of configuration options picking those that will provide the optimal level of functionality and security. So you need procedures for establishing and maintaining secure configurations in your environment.</p>
 
     <h2>Why Is This Control Important?</h2>
-    <p>You might be tempted to think "all of my software is up to date, so it's secure". But even software configured in an insecure manner will be vulnerable to exploitation regardless of which version of it is running. Without a system for managing secure configurations, you increase the likelihood of insecure configurations existing in your environment.</p>
+    <p>You might be tempted to think "all of my software is up to date, so it's secure". But even software configured in an insecure manner will be vulnerable to exploitation regardless of which version of it is running. Without a system for managing secure configurations, you increase the likelihood of insecure configurations existing in your environment.</p>
 
     <h2>How to Implement This Control</h2>
     <p>This control involves the establishing, implementing, maintaining, and monitoring configurations in your environment</p>
 
     <h3>Establish Secure Configurations</h3>
-    <p>Rather than starting from scratch with your configurations, you can use configurations provided by organizations like the National Institute of Standards and Technology or Center for Internet Security. These configurations are provided free of charge and should be used as a baseline to carefully deviate from.</p>
+    <p>Rather than starting from scratch with your configurations, you can use configurations provided by organizations like the National Institute of Standards and Technology or Center for Internet Security. These configurations are provided free of charge and should be used as a baseline to carefully deviate from.</p>
 
     <h3>Establish and Secure Master Images</h3>
-    <p>The biggest takeaway from this section is to ensure your configurations are applied to new or compromised hosts in your environment. The image you receive freshly installed from the manufacturer is almost certainly not going to match your established secure configurations, so you are going to need to reconfigure every new device you get. Hosts in your environment that need to be reimaged will need to have those secure configurations reapplied as well. The best way to achieve this is to establish and securely store master images for all of the devices in your network.</p>
+    <p>The biggest takeaway from this section is to ensure your configurations are applied to new or compromised hosts in your environment. The image you receive freshly installed from the manufacturer is almost certainly not going to match your established secure configurations, so you are going to need to reconfigure every new device you get. Hosts in your environment that need to be reimaged will need to have those secure configurations reapplied as well. The best way to achieve this is to establish and securely store master images for all of the devices in your network.</p>
 
     <h3>Utilize System Configuration Management Tools</h3>
     <p>Instead of running around trying to manually manage configurations on all of your hosts, implement a system configuration management tool to deploy configurations for the operating system and applications running on the devices in your environment. These tools should be set to automatically redeploy your configurations at a regularly scheduled interval to ensure the devices remain configured properly.</p>
 
     <h3>Automated Configuration Monitoring</h3>
-    <p>Lastly, implement an automated SCAP compliant configuration monitoring system to verify your hosts are receiving and properly implementing your secure configurations. Alerts should be issued when hosts are found to have had unauthorized changes made to their configurations. The goal is to make sure the hosts in your environment are securely configured. It only takes one misconfigured host for an attacker to gain access. Without tracking and reporting on configurations, you will inevitably have some hosts slip through the cracks. </p>
+    <p>Lastly, implement an automated SCAP compliant configuration monitoring system to verify your hosts are receiving and properly implementing your secure configurations. Alerts should be issued when hosts are found to have had unauthorized changes made to their configurations. The goal is to make sure the hosts in your environment are securely configured. It only takes one misconfigured host for an attacker to gain access. Without tracking and reporting on configurations, you will inevitably have some hosts slip through the cracks. </p>
 
     <h2>Conclusion</h2>
     <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-audit-logs" onClick={jumpToTop}>#6: Maintenance, Monitoring and Analysis of Audit Logs</Link></p>
-    <p>Establishing and maintaining secure configurations for the hosts in your environment is a critical step in reducing cybersecurity risk facing your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
+    <p>Establishing and maintaining secure configurations for the hosts in your environment is a critical step in reducing cybersecurity risk facing your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
-},*/
-/*{
+},
+{
   title: 'Controlled Use of Admin Privileges - Top 20 Security Controls',
   date: 'June 2021',
   author: 'Michael Wetherald',
@@ -200,7 +200,7 @@ export default [
         <li><Link to="/blog/top-20-secure-configs" onClick={jumpToTop}>Secure Configuration for Hardware and Software</Link></li>
         <li><Link to="/blog/top-20-audit-logs" onClick={jumpToTop}>Maintenance, Monitoring and Analysis of Audit Logs</Link></li>
       </ul>
-    <h2>#4: Controlled Use of Administrator Privileges</h2>
+    <h2>#4: Controlled Use of Administrator Privileges</h2>
     <p>Administrator privileges are necessary for managing your environment, but in the hands of an adversary they are a free pass to wreak havoc in your environment. Getting the right balance of security and availability for those who need it requires a deliberate strategy.</p>
 
     <h2>Why Is This Control Important?</h2>
@@ -226,16 +226,16 @@ export default [
     <p>Limit the use of scripting utilities like Powershell and Python to administrators or developers who require access for their job responsibilities. Without the use of scripts adversaries who compromise hosts will be severely restricted in their ability to advance.</p>
 
     <h3>Multifactor Authentication and Unique Passwords</h3>
-    <p>Utilize multifactor authentication (MFA) for administrator accounts wherever possible. There are lots of different options for multifactor authentication, and choosing a solution that's right for your organization requires some careful planning. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today and we can work with you to understand your options. Wherever MFA isn't available, use admin passwords which are unique to each system. A good password management solution will make this feasible.</p>
+    <p>Utilize multifactor authentication (MFA) for administrator accounts wherever possible. There are lots of different options for multifactor authentication, and choosing a solution that's right for your organization requires some careful planning. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today and we can work with you to understand your options. Wherever MFA isn't available, use admin passwords which are unique to each system. A good password management solution will make this feasible.</p>
 
     <h2>Logging and Monitoring</h2>
-    <p>The other half of this control involves early detection and response to issues involving your adminstrator accounts. Configure the hosts in your environment to log changes to administrator groups. This includes when a user is added or removed from admin groups on the host. Additionally, log and alert on unsuccessful login attempts by admin users. Alerting on these two events will allow your staff quickly detect and react to compromised hosts.</p>
+    <p>The other half of this control involves early detection and response to issues involving your adminstrator accounts. Configure the hosts in your environment to log changes to administrator groups. This includes when a user is added or removed from admin groups on the host. Additionally, log and alert on unsuccessful login attempts by admin users. Alerting on these two events will allow your staff quickly detect and react to compromised hosts.</p>
 
     <h2>Conclusion</h2>
     <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-secure-configs" onClick={jumpToTop}>#5: Secure Configurations</Link></p>
-    <p>Securing administrator privileges is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
+    <p>Securing administrator privileges is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
-},*/
+},
 {
   title: 'Vulnerability Management - Top 20 Security Controls',
   date: 'April 2021',
@@ -260,10 +260,10 @@ export default [
     <p>Vulnerabilities are the openings adversaries use to compromise your organization. It's important to implement a calculated strategy for mitigating the risk of any of those vulnerabilities being exploited.</p>
 
     <h2>Why Is This Control Important?</h2>
-    <p>Software is continuously updated to patch security vulnerabilities. Adversaries only need to exploit your systems between the announcement of a new exploit and before your organization has had a chance to install the updates which patch that exploit. The longer the time you wait to update systems, the wider the window of opportunity for attackers to compromise your systems. </p>
+    <p>Software is continuously updated to patch security vulnerabilities. Adversaries only need to exploit your systems between the announcement of a new exploit and before your organization has had a chance to install the updates which patch that exploit. The longer the time you wait to update systems, the wider the window of opportunity for attackers to compromise your systems. </p>
 
     <h2>How to Implement This Control</h2>
-    <p>This control is comprised of methods for implementing an effective strategy to catch those vulnerabilities before your enemies do. This breaks down into two categories, vulnerability scanning and patch management.</p>
+    <p>This control is comprised of methods for implementing an effective strategy to catch those vulnerabilities before your enemies do. This breaks down into two categories, vulnerability scanning and patch management.</p>
     
     <h2>Vulnerability Scanning</h2>
     <p>Vulnerability scanning is the process we'll use to quickly find vulnerabilities in your environment before your adversaries do. Effectively implementing a vulnerability scanning program will involve a combination of tools, policies, and procedures.</p>
@@ -285,7 +285,7 @@ export default [
 
     <h2>Conclusion</h2>
     <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-admin-priv" onClick={jumpToTop}>#4: Controlled Use of Administrator Privileges</Link></p>
-    <p>Vulnerability Managment is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
+    <p>Vulnerability Managment is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
 },
 {
@@ -311,10 +311,10 @@ export default [
     <h2>#2: Inventory and Management of Software Assets</h2>
     <p>The software running on your hardware is what makes it vulnerable. If you want a completely secure computer, remove all of the software running. Obviously that is not a reasonable solution, but it illustrates where the problem truly lies. In order to secure your devices and protect your organization, you need to manage software that is allowed to run in your environment.</p>
     <h2>Why Is This Control Important?</h2>
-    <p>Without controlling the software is allowed to run in your environment, you create an environment where malware and vulnerable software can live and cause problems. Malware and viruses can be thought of as unauthorized software running on your devices. With proper control and inventory of software authorized to run in your organization, you can develop a strategy for ensuring that software is patched in a reasonable time frame, and unauthorized software is prevented from even getting 
+    <p>Without controlling the software is allowed to run in your environment, you create an environment where malware and vulnerable software can live and cause problems. Malware and viruses can be thought of as unauthorized software running on your devices. With proper control and inventory of software authorized to run in your organization, you can develop a strategy for ensuring that software is patched in a reasonable time frame, and unauthorized software is prevented from even getting 
 executed.</p>
     <h2>How to Implement This Control</h2>
-    <p>The two main areas of focus for this control are inventory of authorized and installed software, and application whitelisting to detect and prevent unauthorized software.</p>
+    <p>The two main areas of focus for this control are inventory of authorized and installed software, and application whitelisting to detect and prevent unauthorized software.</p>
     
     <h3>Maintain Detailed Inventory of Authorized Software</h3>
     <p>We first need a list of software which is authorized and necessary for business purposes on all business systems. When implementing security control #1 Inventory and Management of Hardware Assets, you have a created database of all business systems. When auditing these systems for the software which is installed on them, we will have a list of all software installed in the environment. We can then determine if that software is necessary for business purposes and include it in the authorized list.</p>
@@ -334,17 +334,17 @@ executed.</p>
     <p>The hardware inventory generated via control #1 should be integrated with the software inventory you generate implementing this security control. This allows you to track all the necessary information in one place.</p>
 
     <h3>Address Unauthorized Software</h3>
-    <p>When your automated software inventory tool finds unauthorized software installed on machines you need to have a procedure in place to address that software. Do you dispatch support staff to uninstall the software? Do you isolate the machine on the network? Does your staff need to be alerted immediately? Who is allowed to update the authorized software list? You need a plan to address this situation.</p>
+    <p>When your automated software inventory tool finds unauthorized software installed on machines you need to have a procedure in place to address that software. Do you dispatch support staff to uninstall the software? Do you isolate the machine on the network? Does your staff need to be alerted immediately? Who is allowed to update the authorized software list? You need a plan to address this situation.</p>
 
     <h3>Application Whitelisting</h3>
-    <p>Application whitelisting is a technology to implement on all business systems to prevent the execution of unauthorized software. Ensure that software library files (.dll, .ocx, .so, etc.) are whitelisted to ensure only authorized libraries are allowed to load into system processes. The same applies for scripts (.py, .js, macros, .ps1, etc.), which should be digitally signed to ensure integrity.</p>
+    <p>Application whitelisting is a technology to implement on all business systems to prevent the execution of unauthorized software. Ensure that software library files (.dll, .ocx, .so, etc.) are whitelisted to ensure only authorized libraries are allowed to load into system processes. The same applies for scripts (.py, .js, macros, .ps1, etc.), which should be digitally signed to ensure integrity.</p>
 
     <h3>Physically or Logically Segregate High Risk Software</h3>
     <p>Some systems will come with higher risk to your organization. The failure or compromise of those systems might be catastrophic to your organization. Isolate and control access to those systems more carefully to reduce the likelihood of a compromise.</p>
 
     <h2>Conclusion</h2>
-    <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-vuln-management" onClick={jumpToTop}>#3 Vulnerability Management</Link></p>
-    <p>Inventory and Management of Software Assets is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
+    <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-vuln-management" onClick={jumpToTop}>#3 Vulnerability Management</Link></p>
+    <p>Inventory and Management of Software Assets is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
 },
 {
@@ -370,7 +370,7 @@ executed.</p>
     <h2>#1: Inventory and Management of Hardware Assets</h2>
     <p>This control is a critical first step for securing your organization. You must identify all of the assets in use by your organization, regardless of whether they are currently connected to your network. All hardware assets which have the ability to store, access, or process data pertaining your business need to be considered when implementing the remaining security controls, and this is only possible with an accurate and up to date inventory of hardware assets.</p>
     <h2>Why Is This Control Important?</h2>
-    <p>How can you protect your environment if you don’t know what devices are in it? Even if you pull a list of devices which are on your secure network, without some type of inventory how do you know which devices are authorized? Which assets contain the most sensitive information? Which assets must remain active for your business to continue being operational? All of these questions are critical for developing a security program and can only be done with an accurate and up to date inventory of hardware assets.</p>
+    <p>How can you protect your environment if you don’t know what devices are in it? Even if you pull a list of devices which are on your secure network, without some type of inventory how do you know which devices are authorized? Which assets contain the most sensitive information? Which assets must remain active for your business to continue being operational? All of these questions are critical for developing a security program and can only be done with an accurate and up to date inventory of hardware assets.</p>
     <h2>How to Implement This Control</h2>
     <p>This control boils down to maintaining some sort of inventory list of all of your hardware assets. If you are a small team, this might just be a spreadsheet. Organizations with more than a handful of assets should use IT Asset Management software which can meet the requirements outlined as follows:</p>
     <h3>Maintain Detailed Inventory of Assets</h3>
@@ -385,18 +385,18 @@ executed.</p>
     </ul>
     <h3>Asset Discovery</h3>
     <p>Asset discovery is the process of determining which assets are on your network. There are two categories of asset discovery, active discovery and passive discovery. In order to implement this control in your environment:</p>
-    <p>Use an <b>active discovery</b> tool which can identify devices connected to the organizations network. This can be done by scanning the network for all active hosts and updating the hardware asset inventory list with the results.</p>
-    <p>Use a <b>passive discovery</b> tool which can identify devices sending traffic on your organization's network. This can be done by parsing logs generated by network devices and updating the hardware asset inventory list accordingly.</p>
+    <p>Use an <b>active discovery</b> tool which can identify devices connected to the organizations network. This can be done by scanning the network for all active hosts and updating the hardware asset inventory list with the results.</p>
+    <p>Use a <b>passive discovery</b> tool which can identify devices sending traffic on your organization's network. This can be done by parsing logs generated by network devices and updating the hardware asset inventory list accordingly.</p>
     <h3>DHCP Logging</h3>
     <p>Utilize DHCP logging to update your hardware asset inventory. DHCP is the protocol used to automatically manage and assign IP addresses as hosts leave and join your network. This is a perfect place to detect assets joining and leaving your network and help keep your hardware asset inventory up to date.</p>
     <h3>Advanced Steps</h3>
-    <p>Take this control to the next level by utilizing port level access control. This involves authenticating hardware assets as they join the network. When you implement this control, make sure you integrate it with the hardware inventory system to ensure only authorized assets can connect to the network.</p>
+    <p>Take this control to the next level by utilizing port level access control. This involves authenticating hardware assets as they join the network. When you implement this control, make sure you integrate it with the hardware inventory system to ensure only authorized assets can connect to the network.</p>
     <p>Another advanced level of protection is the use of client certificates, instead of or in addition to credentials, to authenticate hardware connecting to the network. Just as we mentioned with port level access control, make sure the system is tied into the hardware inventory list to ensure only authorized assets connect to the network.</p>
     <h3>Address Unauthorized Assets</h3>
     <p>A crucial part of implementing this control involves developing policies and procedures for addressing assets in your environment which weren't previously authorized. How do you want to handle this situation in your environment? Do you allow bring your own device(BYOD)? When an unrecognized device connects to your network, who is responsible for what actions to address this?</p>
     <h2>Conclusion</h2>
-    <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-software-inventory" onClick={jumpToTop}>#2 Inventory and Management of Software Assets</Link></p>
-    <p>Inventory and Management of Software Assets is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you’re ready to take steps to reduce the cybersecurity risk in your organization.</p>
+    <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-software-inventory" onClick={jumpToTop}>#2 Inventory and Management of Software Assets</Link></p>
+    <p>Inventory and Management of Software Assets is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you’re ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
 },
 {
