@@ -59,7 +59,7 @@ export default [
     <p>If your organization would like assistance in determining what security policies make sense for you <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
   </div>)
 },*/
-/*{
+{
   title: 'What Is Security Information And Event Managment (SIEM)?',
   date: 'December 2021',
   author: 'Michael Wetherald',
@@ -79,7 +79,7 @@ export default [
     <p>Logs contain the footsteps of hidden enemies working to compromise your environment. If these logs aren't deliberately generated and reviewed, you will be unaware when your prevention systems fail and your environment is compromised. Implementing a Security Information and Event Management (SIEM) is a great way to handle a large volume of logs being generated and set up automated alerts when those security incidents arise.</p>
     <p>If your organization is read to implement a SIEM we’re here to help. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
   </div>)
-},*/
+},
 {
   title: 'Maintenance, Monitoring and Analysis of Audit Logs - Top 20 Security Controls',
   date: 'October 2021',
