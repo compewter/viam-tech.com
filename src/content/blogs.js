@@ -17,7 +17,7 @@ export default [
   path: '/blog/why-you-need-security-policies',
   content: (<div>
     <h2>What is a Security Policy?</h2>
-    <p>A security policy defines what is and is not to be done to protect your organization from cybersecurity threats. A well defined policy must be realistic in implemention and enforceable.</p>
+    <p>A security policy defines what is and is not to be done to protect your organization from cybersecurity threats. A well defined policy must be realistic in implementation and enforceable.</p>
     <p>It is important to keep in mind that a security policy defines <i>what</i> is to be done, not <i>how</i>. The <i>how</i> is defined via procedures and are more likely to change as the environment or circumstances change.</p>
     <h2>What are the Benefits of a Security Policy?</h2>
     <p>A well written security policy lets employees know what is and isn't allowed within your organization. These policies should be measured and tailored to your organizations risk tolerance and prioritize protection against high impact cybersecurity risks.</p>
@@ -32,7 +32,7 @@ export default [
     <p><b>Responsibilities:</b> Who is responsible for the previously defined actions? Who is responsible for enforcing the policy?</p>
     <h2>Example Security Policy</h2>
     <p>Let's go through an example policy for a hypothetical customer.</p>
-    <p><b>Purpose:</b> The purpose of this policy is to limit the risk that comes with insecure passwords in the environment. Insecure passwords are low-hanging fruit for adversaries to cause damage to our organziation.</p>
+    <p><b>Purpose:</b> The purpose of this policy is to limit the risk that comes with insecure passwords in the environment. Insecure passwords are low-hanging fruit for adversaries to cause damage to our organization.</p>
     <p><b>Scope:</b> This policies applies to all users, accounts, and hosts in the environment.</p>
     <p><b>Policy:</b></p>
     <ul>
@@ -51,16 +51,16 @@ export default [
       <li>Security staff will review all found insecure passwords to determine how they came to be before updating the passwords. Any indications of intentional circumvention will be reported to HR and the employee's manager for review.</li>
     </ul>
     <p><b>Penalties for Non-Compliance:</b> Typical violations of this policy are incidental and will be remediated by IT staff, however employees intentionally circumventing of any of these policies will be met with reprimands and in the event of repeated warnings and violations, may be met with termination.</p>
-    <p><b>Responsibilities: </b> System administrators are responsible for initial accounts and hosts configured with secure passwords and security policies requiring updates within 90 days. Security staff are responsible for scanning the environment for default and insecure passwords. Security staff are responsible for notifying HR and management in the event of intentional circumvention. HR staff will be responsible for reviewing cases of violations of this policy and determing whether warnings, reprimands, or termination are appropriate.</p>
+    <p><b>Responsibilities: </b> System administrators are responsible for initial accounts and hosts configured with secure passwords and security policies requiring updates within 90 days. Security staff are responsible for scanning the environment for default and insecure passwords. Security staff are responsible for notifying HR and management in the event of intentional circumvention. HR staff will be responsible for reviewing cases of violations of this policy and determining whether warnings, reprimands, or termination are appropriate.</p>
     <h2>What challenges come with implementing a security policy?</h2>
-    <p>There are several challenges which come with designing and implementing security policies in any organization. Initially you will need to accurately determine and caculate the inevitable tradeoffs that come with your security policy. Sometimes the cost of user productivity is not worth the benefit of implementing a security policy, and accurately reviewing your environment and determining those costs and benefits is key to implementing good policies. Once you have determined a policy which will have net positive tradeoffs, it is necessary to get both management and user buy-in.</p>
+    <p>There are several challenges which come with designing and implementing security policies in any organization. Initially you will need to accurately determine and calculate the inevitable trade-offs that come with your security policy. Sometimes the cost of user productivity is not worth the benefit of implementing a security policy, and accurately reviewing your environment and determining those costs and benefits is key to implementing good policies. Once you have determined a policy which will have net positive trade-offs, it is necessary to get both management and user buy-in.</p>
     <p>Management should be sold on the financial reasoning for implementing the policy. Emphasize the costs of security events which this policy intends to reduce risk of. Management must help shift the culture of security in your environment, and if you have their support you will have the momentum necessary to make company-wide shifts toward greater security.</p>
     <p>End users should be informed of the reasoning for the policies and when selling the policy to them, the emphasis should be on how the policy benefits them, for example through added protection or improved productivity. Sometimes it's inevitable that a security policy negatively impacts users. It's important to emphasize the need for the security policy, and to have management buy in to help shift the culture around complying with the new policy.</p>
     <p>If your organization would like assistance in determining what security policies make sense for you <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
   </div>)
 },*/
 {
-  title: 'What Is Security Information And Event Managment (SIEM)?',
+  title: 'What Is Security Information And Event Management (SIEM)?',
   date: 'December 2021',
   author: 'Michael Wetherald',
   snippet: 'SIEM is a powerful tool to analyze large volumes of logs for security events and for generating automated alerts. Without a SIEM...',
@@ -210,7 +210,7 @@ export default [
     <p>This control breaks down into two main components. One is around updating the policies and procedures involving admin accounts. And the other is logging and monitoring the use of those admin accounts.</p>
     
     <h2>Administrator Account Management</h2>
-    <h3>Inventory of Aministrator Accounts</h3>
+    <h3>Inventory of Administrator Accounts</h3>
     <p>Without an inventory of the administrator accounts in your environment they are unmanaged and free to change and be abused without notice. Utilize automated tools to audit the hosts in your environment for all administrator accounts on the device. Then audit this inventory to ensure only authorized users have elevated privileges necessary for their job responsibilities.</p>
 
     <h3>Default Passwords</h3>
@@ -219,17 +219,17 @@ export default [
     <h3>Utilize Dedicated Administrator Accounts</h3>
     <p>All users who require administrator accounts should also be provided a user account without administrator privileges to use for typical day to day activities. Using admin accounts to browse the web or check email drastically increases the risk of those activities. A user using an admin account to open an adversary's email attachment has now provided that adversary admin access to the device.</p>
     
-    <h3>Utilize Dedicated Adminstrator Devices</h3>
+    <h3>Utilize Dedicated Administrator Devices</h3>
     <p>Segregate the host(s) necessary for performing administrative responsibilities from the organizations primary network. There should be no Internet access from this host, and it should not be used for any other activity.</p>
 
     <h3>Restrict Access to Scripting Languages</h3>
     <p>Limit the use of scripting utilities like Powershell and Python to administrators or developers who require access for their job responsibilities. Without the use of scripts adversaries who compromise hosts will be severely restricted in their ability to advance.</p>
 
-    <h3>Multifactor Authentication and Unique Passwords</h3>
-    <p>Utilize multifactor authentication (MFA) for administrator accounts wherever possible. There are lots of different options for multifactor authentication, and choosing a solution that's right for your organization requires some careful planning. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today and we can work with you to understand your options. Wherever MFA isn't available, use admin passwords which are unique to each system. A good password management solution will make this feasible.</p>
+    <h3>Multi-factor Authentication and Unique Passwords</h3>
+    <p>Utilize multi-factor authentication (MFA) for administrator accounts wherever possible. There are lots of different options for multi-factor authentication, and choosing a solution that's right for your organization requires some careful planning. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today and we can work with you to understand your options. Wherever MFA isn't available, use admin passwords which are unique to each system. A good password management solution will make this feasible.</p>
 
     <h2>Logging and Monitoring</h2>
-    <p>The other half of this control involves early detection and response to issues involving your adminstrator accounts. Configure the hosts in your environment to log changes to administrator groups. This includes when a user is added or removed from admin groups on the host. Additionally, log and alert on unsuccessful login attempts by admin users. Alerting on these two events will allow your staff quickly detect and react to compromised hosts.</p>
+    <p>The other half of this control involves early detection and response to issues involving your administrator accounts. Configure the hosts in your environment to log changes to administrator groups. This includes when a user is added or removed from admin groups on the host. Additionally, log and alert on unsuccessful login attempts by admin users. Alerting on these two events will allow your staff quickly detect and react to compromised hosts.</p>
 
     <h2>Conclusion</h2>
     <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-secure-configs" onClick={jumpToTop}>#5: Secure Configurations</Link></p>
@@ -285,7 +285,7 @@ export default [
 
     <h2>Conclusion</h2>
     <p>Be sure to check out the next article in our series, where we cover security control <Link to="/blog/top-20-admin-priv" onClick={jumpToTop}>#4: Controlled Use of Administrator Privileges</Link></p>
-    <p>Vulnerability Managment is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
+    <p>Vulnerability Management is a crucial control for developing the security program at your organization. Viam is here to help guide you through implementing this control at your organization. <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today if you are ready to take steps to reduce the cybersecurity risk in your organization.</p>
   </div>)
 },
 {
@@ -403,7 +403,7 @@ executed.</p>
   title: 'What Makes a Good Password?',
   date: 'October 2020',
   author: 'Michael Wetherald',
-  snippet: 'What characterstics do you need in your passwords to make it difficult for criminals to defeat?',
+  snippet: 'What characteristics do you need in your passwords to make it difficult for criminals to defeat?',
   path: '/blog/what-makes-passwords-good',
   content: (<div>
     <p>In our article <Link to='/blog/exploiting-passwords' onClick={jumpToTop}>“Poor Passwords Are Like No Passwords”</Link> we discuss common techniques criminals use to exploit poor passwords. With these techniques in mind, we can put together some guidelines for passwords which reduce the likelihood of criminals succeeding.</p>
@@ -729,7 +729,7 @@ executed.</p>
   title: 'Hacking Explained: URL Spoofing Trick',
   date: 'February 2019',
   author: 'Michael Wetherald',
-  snippet: 'This simple but effective URL spoofing trick can fool even the most security conscious users into believing they are on a legitimate webiste...',
+  snippet: 'This simple but effective URL spoofing trick can fool even the most security conscious users into believing they are on a legitimate website...',
   path: '/blog/hacking-explained-url-spoofing-trick',
   content: (<div>
     <p>When a user loads an https link in Google Chrome, Mozilla Firefox, Microsoft Edge, or Internet Explorer it shows a nice green secure lock and protocol (https) in the url:</p>
