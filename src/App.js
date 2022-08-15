@@ -6,13 +6,21 @@ import BlogEntry from './containers/BlogEntry'
 import LossCalculator from './containers/LossCalculator'
 import LossCalcResult from './containers/LossCalculator/Result'
 import Contact from './containers/ContactPage'
+import FormPage from './containers/FormPage'
 import Services from './containers/ServicesPage'
 import Home from './containers/HomePage'
 import blogs from './content/blogs'
+import forms from './content/forms'
 
 const blogContentByPath = blogs.reduce((blogsByPath, blog)=>{
   blogsByPath[blog.path] = blog;
   return blogsByPath;
+},{})
+
+
+const formsByPath = forms.reduce((formsByPath, form)=>{
+  formsByPath[form.path] = form;
+  return formsByPath;
 },{})
 
 class App extends Component {
@@ -48,12 +56,22 @@ class App extends Component {
              if(blogContent){
                return <BlogEntry activePage='blog' blog={blogContent} />
              }
-             //eventually return not found content with recommended articles
+             //else return not found content with recommended articles
              return <BlogFeed activePage='blog' />
             }}/>
             <Route exact path="/contact" render={props => <Contact activePage='contact' />} />
             <Route exact path="/calculator" render={props => <LossCalculator activePage='calculator' />} />
             <Route exact path="/loss-calc-result" render={props => <LossCalcResult searchString={props.location.search} />} />
+
+            <Route exact path="/form/:path" render={props => {
+             const form = formsByPath[`/${props.match.params.path}`]
+             if(form){
+               return <FormPage activePage='form' form={form} />
+             }
+
+             return <Home activePage='home' />
+            }}/>
+
             <Route render={props => <Home />} />
           </Switch>
         </div>
