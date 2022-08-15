@@ -9,7 +9,7 @@ function jumpToTop(){
 }
 
 export default [
-/*{
+{
   title: 'Why Your Organization Needs Security Policies',
   date: 'February 2022',
   author: 'Michael Wetherald',
@@ -58,7 +58,7 @@ export default [
     <p>End users should be informed of the reasoning for the policies and when selling the policy to them, the emphasis should be on how the policy benefits them, for example through added protection or improved productivity. Sometimes it's inevitable that a security policy negatively impacts users. It's important to emphasize the need for the security policy, and to have management buy in to help shift the culture around complying with the new policy.</p>
     <p>If your organization would like assistance in determining what security policies make sense for you <Link to='/contact' onClick={jumpToTop}>Contact us</Link> today for a free consultation.</p>
   </div>)
-},*/
+},
 {
   title: 'What Is Security Information And Event Management (SIEM)?',
   date: 'December 2021',
