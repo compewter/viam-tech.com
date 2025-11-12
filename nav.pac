@@ -31,7 +31,6 @@ function FindProxyForURL(url, host) {
         "practicepanther.com",
         "joinarc.com",
         "joinhandshake.com",
-        "google.com",
         "bitwarden.com",
         "lastpass.com",
         "proton.me",
@@ -43,13 +42,11 @@ function FindProxyForURL(url, host) {
         "stripe.com",
         "wctfcu.com",
         "lucid.app",
-        "zoom.us",
         "robinhood.com",
         "auth0.com",
         "simply-easier-payments.com",
         "mailchimp.com",
-        "smallpdf.com",
-        "aloware.com"
+        "smallpdf.com"
     ];
 
     var proxy = "PROXY localhost:3128";
