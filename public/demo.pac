@@ -1,7 +1,6 @@
 function FindProxyForURL(url, host) {
     var proxyDomains = [
-        "icanhazip.com",
-	      "smallpdf.com"
+        "icanhazip.com"
     ];
 
     var proxy = "PROXY 127.0.0.1:3128";
